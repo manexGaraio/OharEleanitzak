@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="action_settings">Configurações</string>
+  <string name="eskaneatzen">Digitalização&#8230;</string>
+  <string name="urlOharIzena">Aviso</string>
+  <string name="urlOharra">O aplicativo irá levá-lo para o seguinte site:</string>
+  <string name="urlOnartu">Aceitar</string>
+  <string name="urlEzeztatu">Rejeitar</string>
+  <string name="berbideratzeaAutomatikokiOnartuIzenburua">Aceitar automaticamente o redirecionamento</string>
+  <string name="berbideratzeaAutomatikokiOnartua">Os endereços da Web lidos através do aplicativo será acessado automaticamente \n(Não recomendado em termos de segurança)</string>
+  <string name="berbideratzeaAutomatikokiEzeztatua">Os endereços da Web lidos através do aplicativo terá que ser aceito antes de ser acessado \n(configuração recomendada)</string>
+  <string name="instantziaGaizki">A câmera não pode ser aberto. Verifique se algum outro aplicativo está usando a câmera e tente novamente.</string>
+  <string name="ezDaKoderikIrakurri">A história está vazia</string>
+  <string name="historia">História</string>
+  <string name="historiaGarbitu">Excluir histórico</string>
+  <string name="historiaEzabatuOharra">Toda a sua história será eliminado</string>
+  <string name="urlEzegokiaIzena">Código incompatível</string>
+  <string name="urlEzegokia">O código que você acabou de ler não é compatível com o aplicativo, uma vez que não aponta para um site</string>
+  <string name="gaur">Hoje</string>
+  <string name="atzo">Ontem</string>
+  <string name="azkenAstea">Semana passada</string>
+  <string name="azkenHilabetea">Mês passado</string>
+  <string name="zaharragoak">Mais velho</string>
+  <string name="aplikazioarenHizkuntzaHautatu">Idioma</string>
+  <string name="aplikazioarenHizkuntzaHautatuAzalpena">Mudar o idioma do aplicativo</string>
+  <string name="laguntza">Ajuda</string>
+  <string name="laguntzaHasiera">OharEleanitzak é o aplicativo utilizado para a visualização de conteúdo multilíngüe usando códigos QR. Se precisar de ajuda com qualquer um dos recursos de imprensa sobre o ícone correspondente abaixo:</string>
+  <string name="qrIrakurlea">Leitor de QR</string>
+  <string name="qrIrakurleaLaguntza">Ajuda associado com o leitor de QR</string>
+  <string name="ezarpenakLaguntza">Ajuda associado com as configurações do aplicativo</string>
+  <string name="historiaLaguntza">Ajuda associado com a história do aplicativo</string>
+  <string name="qrLaguntzaTestua"><p>Para acessar o conteúdo do museu a partir de seu telefone móvel que você precisa para digitalizar um código QR. Um código QR parece com isso: </p></string>
+  <string name="qrLaguntzaTestuaJarraipena"><p>A fim de fazer a varredura do código, o código tem de ser focada nas imagens exibidas na tela. Uma vez que o aplicativo ter digitalizado o código, o seu conteúdo será verificado para ver se ele contém uma url e se é assim, haverá duas maneiras diferentes de continuar: \n\n</p>
+      <ul>
+          <li>Se a definição de \'Aceitar automaticamente o redirecionamento\' está habilitado a url será acessada diretamente em um navegador \n\n</li>
+          <li>Se a definição de \'Aceitar automaticamente o redirecionamento\' está desativada, o usuário terá que autorizar a url a ser acessado</li>
+      </ul> 
+  </string>
+  <string name="ezarpenakLaguntzaTestua"><p>Há duas ações diferentes que podem ser realizadas na tela de \'Configurações\': \n\n</p>
+      <ul>
+          <li><u>\'Aceitar automaticamente o redirecionamento\':</u> Esta configuração especifica se os códigos de leitura com o scanner será acessado imediatamente ou será necessária a autorização do usuário. A recomendação é para que essa configuração ser desativado para melhoria de segurança \n\n</li>
+          <li><u>\'Idioma\':</u> Esta configuração irá definir o idioma do aplicativo, o que terá um impacto direto sobre a linguagem do conteúdo acessado através dos códigos QR de OharEleanitzak</li>
+      </ul>   
+  </string>
+  <string name="historiaLaguntzaTestua"><p>A tela \'História\' pode ser usado para gerenciar a história do aplicativo. Você será capaz de acessar os códigos previamente lidos sem re-lê-los, além de excluir o histórico atual usando a opção no menu de opções </p></string>
+  <string name="ezDagoLaguntzarik">Não há ajuda associada a este tópico</string>
+  <string name="laguntzaHasieraraItzuli"><u>&lt;- Voltar para Principal Ajuda</u></string>
+  <string name="qrIrudiarenAzalpena">Esta imagem é usada para mostrar como um código QR parece</string>
+  <string name="adi">Atenção</string>
+  <string name="dbGarbitzeanErrorea">Ocorreu um erro ao excluir o histórico:</string>
+  <string name="qrHizkuntzaEzartzeanErrorea">Ocorreu um erro ao definir o idioma do conteúdo do código QR. Por favor, tente novamente</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <CheckBoxPreference android:title="@+string/berbideratzeaAutomatikokiOnartuIzenburua"
+        android:key="berbideratzeaAutomatikokiOnartu"
+         android:defaultValue="false"
+         android:summaryOn="@+string/berbideratzeaAutomatikokiOnartua"
+         android:summaryOff="@+string/berbideratzeaAutomatikokiEzeztatua" 
+         />
+    <!-- android:summary="@+string/berbideratzeaAutomatikokiOnartuAzalpena"
+    android:summaryOn="@+string/berbideratzeaAutomatikokiOnartua"
+         android:summaryOff="@+string/berbideratzeaAutomatikokiEzeztatua" -->
+    <ListPreference android:title="@+string/aplikazioarenHizkuntzaHautatu"
+        android:summary="@+string/aplikazioarenHizkuntzaHautatuAzalpena"
+        android:key="hautatutakoHizkuntza"
+        android:entries="@array/hizkuntzArray"
+        android:entryValues="@array/hizkuntzArrayBalioak"
+        android:defaultValue="en"/>
+
+</PreferenceScreen>

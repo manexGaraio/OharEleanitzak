@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Règlages</string>
+   	<string name="eskaneatzen">Scanning&#8230;</string>
+   	<string name="urlOharIzena">Attention</string>
+   	<string name="urlOharra">L\'application vas vous amener au site ci-joint : </string>
+   	<string name="urlOnartu">Accepter</string>
+   	<string name="urlEzeztatu">Rejeter</string>
+	<string name="berbideratzeaAutomatikokiOnartuIzenburua">Accepter d´être redirigé automatiquement</string>
+	<string name="berbideratzeaAutomatikokiOnartua">Toutes les adresses scanées via QR code seront accédées automatiquement \n(Pas recommandé en termes de sécurité)</string>
+	<string name="berbideratzeaAutomatikokiEzeztatua">Toutes les adresses web scannées via QR code devront êtres acceptées avant de pouvoir êtres accédées \n(Règlage recommandé)</string>
+	<string name="instantziaGaizki">La camera n\'a pas pù être ouverte. Veuillez verrifier si une autre application ne l\'utilise pas et réessayez.</string>
+	<string name="ezDaKoderikIrakurri">L\'historique est vide.</string>
+	<string name="historia">Historique</string>
+	<string name="historiaGarbitu">Supprimer l\'historique</string>
+	<string name="historiaEzabatuOharra">Voulez vous supprimer l\'historique?</string>
+	<string name="urlEzegokiaIzena">Code Incompatible</string>
+	<string name="urlEzegokia">Le code que vous avez scanné n\'est pas compatible avec cette application comme celle-ci ne redirige pas un site web</string>
+	<string name="gaur">Aujourd\'hui</string>
+	<string name="atzo">Hier</string>
+	<string name="azkenAstea">Semaine dernière</string>
+	<string name="azkenHilabetea">Mois dernier</string>
+	<string name="zaharragoak">Plus anciens</string>
+	<string name="aplikazioarenHizkuntzaHautatu">Langue</string>
+    <string name="aplikazioarenHizkuntzaHautatuAzalpena">Changer la langu de l\'application</string>
+	<string name="laguntza">Aide</string>
+    <string name="laguntzaHasiera">OharEleanitzak est l\'application utilisée pour la visualisation de contenu multilingue en utilisant les codes QR. Si tu as besoin d´aide au sujet de certaines fonctions, tu peux appuyer sur l´image correspondante: </string>
+	<string name="qrIrakurlea">Lecteur QR</string>
+	<string name="qrIrakurleaLaguntza">Aide pour le lecteur QR</string>
+	<string name="ezarpenakLaguntza">Aide pour l´installation de l´application</string>
+	<string name="historiaLaguntza">Aide pour l´historique de l´application</string>
+	<string name="qrLaguntzaTestua"><p>In order to access the content of the museum from your mobile phone you need to scan a QR code. A QR code looks like this: </p></string>
+	<string name="qrLaguntzaTestuaJarraipena"><p>Pour lire le code QR, il faut le placer face à l´écran du téléphone. Lorsque l´application déchiffre le code, son contenu sera analysé pour voir s´il contient l´adresse url. Si c´est le cas, il y aura deux façons de procéder: \n\n</p>
+	    <ul>
+	        <li>Si le paramètre « Accepter d´être redirigé automatiquement » est activé, il y aura directement accès à l´URL depuis le navigateur \n \n</li>
+	        <li>Si le paramètre « Accepter d´être redirigé automatiquement » est désactivé, l´utilisateur devra autoriser l´accès à l´URL</li>
+	    </ul>
+	</string>
+	<string name="ezarpenakLaguntzaTestua"><p>Deux actions peuvent avoir lieu sur l´écran « configuration » : \n\n</p>
+	    <ul>
+	        <li><u>« Accepter d´être redirigé automatiquement »:</u> Ce paramètre spécifie si le code sera directement lu par le lecteur ou bien s´il faudra une autorisation de l´utilisateur. Il est recommandé de déshabiliter ce paramètre pour renforcer la sécurité \n\n</li>
+	    	<li><u>« Langue »:</u> Ce paramètre définit la langue de l´application et aura un impact direct sur la langue employée pour le contenu informatif des codes QR d´OharEleanitzak à visualiser</li>
+	    </ul>
+	</string>
+	<string name="historiaLaguntzaTestua"><p>L´écran “Historique” est utilisé pour gérer l´historique de l´application. Tu pourras accéder aux codes lus précédemment sans avoir à les relire, tout en ayant la possibilité d´effacer l´historique</p></string>
+	<string name="ezDagoLaguntzarik">Il n´y pas de résultat lié à ce thème</string>
+	<string name="laguntzaHasieraraItzuli"><u>&lt;- Revenir à l´aide principale</u></string>
+	<string name="qrIrudiarenAzalpena">Cette image est utilisée pour montrer comment un QR code ressemble</string>
+	<string name="adi">Attention</string>
+	<string name="dbGarbitzeanErrorea">Une erreur a eu lieu au moment d´effacer l´historique: </string>
+	<string name="qrHizkuntzaEzartzeanErrorea">Une erreur a eu lieu au moment de sélectionner la langue du contenu informatif du code QR. Veuillez essayer à nouveau</string>
+</resources>

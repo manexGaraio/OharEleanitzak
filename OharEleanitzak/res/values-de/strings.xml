@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Einstellungen</string>
+   	<string name="eskaneatzen">Scannen&#8230;</string>
+   	<string name="urlOharIzena">Anmerkung</string>
+   	<string name="urlOharra">Diese App wird sie mit der folgenden Webseite verbinden: </string>
+   	<string name="urlOnartu">Akzeptieren</string>
+   	<string name="urlEzeztatu">Ablehnen</string>
+	<string name="berbideratzeaAutomatikokiOnartuIzenburua">Automatische Weiterleitung akzeptieren</string>
+	<string name="berbideratzeaAutomatikokiOnartua">Das Lesen der Webadresse mit Hilfe der App wird automatisch eingeleitet \n(Aus Sicherheitsgründen NICHT empfohlen)</string>
+	<string name="berbideratzeaAutomatikokiEzeztatua">Das Lesen der Webadresse mit Hilfe der App muss vor dem Einleiten bestätigt werden \n(Empfohlen)</string>
+	<string name="instantziaGaizki">Kamera konnte nicht geöffnet werden. Bitten überprüfen Sie, ob eine andere Anwendung diese bereits nutzt und versuchen Sie es erneut</string>
+	<string name="ezDaKoderikIrakurri">Der Verlauf ist leer</string>
+	<string name="historia">Leseverlauf</string>
+	<string name="historiaGarbitu">Leseverlauf löschen</string>
+	<string name="historiaEzabatuOharra">Der gesamte Leseverlauf wird gelöscht</string>
+	<string name="urlEzegokiaIzena">Inkompatibler Code</string>
+	<string name="urlEzegokia">Der eingelesene Code ist mit dieser App nicht kompatibel, da er nicht zu einer Webseite führt.</string>
+	<string name="gaur">Heute</string>
+	<string name="atzo">Gestern</string>
+	<string name="azkenAstea">Letzte Woche</string>
+	<string name="azkenHilabetea">Letzter Monat</string>
+	<string name="zaharragoak">Später</string>
+	<string name="aplikazioarenHizkuntzaHautatu">Sprache</string>
+    <string name="aplikazioarenHizkuntzaHautatuAzalpena">Sprache innerhalb der App ändern</string>
+    <string name="laguntza">Hilfe</string>
+    <string name="laguntzaHasiera">OharEleanitzak ist für die Visualisierung von mehrsprachigen Inhalten mit QR-Codes verwendeten Anwendung. Wenn Sie Hilfe bei der Bedienung benötigen, tippen Sie unten auf den dazugehörigen Icon: </string>
+	<string name="qrIrakurlea">QR-Lesers</string>
+	<string name="qrIrakurleaLaguntza">Hilfe bezüglich des QR-Lesers</string>
+	<string name="ezarpenakLaguntza">Hilfe bezüglich der Einstellungen der App</string>
+	<string name="historiaLaguntza">Hilfe bezüglich des Leseverlauf der App</string>
+	<string name="qrLaguntzaTestua"><p>Um auf die Informationen des Museum mit Ihrem Handy zugreifen zu können, müssen Sie zunächst einen QR-Code scannen. Ein QR-Code sieht so aus: </p></string>
+	<string name="qrLaguntzaTestuaJarraipena"><p>Um einen QR-Code zu scannen müssen Sie den Fokus des Bildes auf den Code legen. Wenn die App den Code gescannt hat, wird diese überprüfen ob sich eine URL darin befindet. Wenn dies so ist, dann gibt es zwei Möglichkeiten fortzufahren: \n\n</p>
+	    <ul>
+	        <li>Wenn die Einstellung \'Automatische Weiterleitung akzeptieren\' aktiviert ist, dann wird die URL mit einem Browser abgerufen \n \n</li>
+	        <li>Wenn die Einstellung \'Automatische Weiterleitung akzeptieren\' deaktiviert ist, dann muss der Benutzer das Abrufen der URL bestätigen</li>
+	    </ul>
+	</string>
+	<string name="ezarpenakLaguntzaTestua"><p>Es gibt zwei verschiedene Aktionen, welche innerhalb der \'Einstellungen\' vorgenommen werden können: \n\n</p>
+	    <ul>
+	        <li><u>\'Automatische Weiterleitung akzeptieren\':</u> Diese Einstellung gibt an, ob Codes vom Scanner direkt abgerufen werden können, oder sie einer Bestätigung durch den Benutzer bedürfen. Empfohlen wird diese Einstellung aus Sicherheitsgründen zu deaktivieren \n\n</li>
+	    	<li><u>\'Sprache\':</u> Diese Einstellung legt die Sprache innerhalb der App fest. Dies beeinflusst, in welcher Sprache die Informationen durch den QR-Code über OharEleanitzak abgerufen werden</li>
+	    </ul>
+	</string>
+	<string name="historiaLaguntzaTestua"><p>Das Fenster \'Leseverlauf\' kann genutzt werden um den Leseverlauf in der App zu bearbeiten. Sie haben die Möglichkeit auf zuvor schon gescannte Codes zu zugreifen und sie erneut zu lesen, aber auch den aktuellen Leseverlauf zu löschen, in dem sie diese Option im Menu wählen</p></string>
+	<string name="ezDagoLaguntzarik">Es steht keine Hilfe zu diesen Bereich zur Verfügung</string>
+	<string name="laguntzaHasieraraItzuli"><u>&lt;- Zurück zur Haupthilfe</u></string>
+	<string name="qrIrudiarenAzalpena">Diese Abbildung soll zeigen wie QR-Codes aussehen können</string>
+	<string name="adi">Achtung</string>
+	<string name="dbGarbitzeanErrorea">Ein Fehler ist während des Löschvorgangs aufgetreten: </string>
+	<string name="qrHizkuntzaEzartzeanErrorea">Ein Fehler ist währende der Einstellung der Sprache für den Inhalt des QR-Codes aufgetreten. Versuchen Sie es erneut</string>
+</resources>

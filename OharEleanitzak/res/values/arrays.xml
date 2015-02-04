@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hizkuntzArray">
+        <item>Català</item>
+        <item>Deutsch</item>
+        <item>English</item>
+        <item>Español</item>
+        <item>Euskara</item>
+        <item>Français</item>
+        <item>Galego</item>
+        <item>Italiano</item>
+        <item>Português</item>
+    </string-array>
+    <string-array name="hizkuntzArrayBalioak">
+        <item>ca</item>
+        <item>de</item>        
+        <item>en</item>
+       	<item>es</item>
+        <item>eu</item>
+        <item>fr</item>
+        <item>gl</item>
+        <item>it</item>
+        <item>pt</item>
+    </string-array>
+</resources>

@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ohar Itzultzailea-1.0\n"
+"POT-Creation-Date: 2014-06-21 12:45+0100\n"
+"PO-Revision-Date: 2014-06-21 12:45+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: D:\\Manex\\Proiektua\\Wordpress\\ohar-itzultzailea\n"
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:23
+msgid "OharEleanitzak-Apertium itzultzailea"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:32
+msgid "Testua itzuli"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:35
+msgid "Izenburua itzuli"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:52
+msgid "Itzuli"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:67
+msgid "Leihoa itxi"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:70
+msgid "Itzulpena gorde"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:73
+msgid "Itzulpena gorde eta leihoa itxi"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:79
+msgid "Itzulpenetarako erabilitako web-zerbitzua:"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:80
+msgid "Apertium"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/itzulpen-orria.php:82
+msgid "Apertium taldearen logoa erakusten duen irudia"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:125
+msgid ""
+"Oraintxe bertan ezin da bidalketaren testua itzuli, editoreko fitxen artean "
+"mugitzeak eragina duelako itzultzailean. Testua itzuli nahi izatekotan, "
+"eguneratu artikulua (Publish atalaren barruko \\'Update\\' botoia sakatuz) "
+"eta klikatu itzultzailearen botoiari zuzenean. Izenburuak itzuli nahi "
+"izatekotan zuzenean egin dezakezu, bidalketa eguneratu beharrik gabe."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:245
+msgid "Jasotako erantzunean(jatorri hizkuntza) estatusa ez da egokia."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:250
+msgid "Hizkuntza bikoteak atzitzean erroreren bat gertatu da."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:478
+msgid "Itzulpena egitean jasotako erantzunak estatus desegokia dauka."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:483
+msgid "Itzulpena egitean errore bat gertatu da."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:506
+msgid ""
+"Izenburuetan badago dagoeneko \\''+biLetraKodea +'\\' hizkuntzarako "
+"izenburua. Izenburu hori ordeztu nahi al duzu?"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:522
+msgid ""
+"Izenburuaren itzulpena ondo bidali da. Eguneratu artikulua (Publish atalaren "
+"barruko \\'Update\\' botoia sakatuz) ondo gordetzen dela ziurtatzeko."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:533
+msgid ""
+"Testu editorean badago dagoeneko \\''+biLetraKodea +'\\' hizkuntzarako "
+"testua. Testu hori ordeztu nahi al duzu?"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:565
+msgid ""
+"Itzulpena ondo bidali da editorera. Eguneratu artikulua (Publish atalaren "
+"barruko \\'Update\\' botoia sakatuz) ondo gordetzen dela ziurtatzeko. "
+"Eguneratzean agertzen ez bada, ziurtatu editoreko \\'Text\\' aukeran zaudela "
+"eta saiatu berriro."
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:853
+msgid "Afrikaansa"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:857
+msgid "Arabiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:861
+msgid "Aragoiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:865
+msgid "Bosniera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:869
+msgid "Bretainiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:873
+msgid "Bulgariera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:877
+msgid "Katalana"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:881
+msgid "Galesa"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:885
+msgid "Daniera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:889
+msgid "Ingelera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:894
+msgid "Esperantoa"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:898
+msgid "Euskara"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:902
+msgid "Frantziera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:906
+msgid "Galiziera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:910
+msgid "Kroaziera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:914
+msgid "Indonesiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:918
+msgid "Islandiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:922
+msgid "Italiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:926
+msgid "Kazakhera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:930
+msgid "Mazedoniera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:934
+msgid "Maltera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:938
+msgid "Malaiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:942
+msgid "Holandesa"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:946
+msgid "Norbegiar Nynorsk-a"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:950
+msgid "Norbegiar Bokmal-a"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:954
+msgid "Okzitaniera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:958
+msgid "Portugalera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:962
+msgid "Errumaniera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:966
+msgid "Eslobeniera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:970
+msgid "Gaztelania"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:974
+msgid "Serbiera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:978
+msgid "Suediera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/jsFuntzioak.php:982
+msgid "Tartarera"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:61
+msgid "Ohar Itzultzailea"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:67
+msgid "Ohar Itzultzailea irekitzeko"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:68
+msgid "Itzulpena abian jartzeko erabiltzen den botoia irudikatzen duen irudia"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:100
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:127
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:156
+msgid "QR Kodea"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:161
+msgid "Bidalketa edota orrialdearen QR kodea eskuratzeko"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/ohar-itzultzailea.php:162
+msgid ""
+"Bidalketaren edota orrialdearen QR kodea eskuratzea hasieratzeko erabiltzen "
+"den botoia"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/qr-orria.php:12
+msgid "QR kodeen sortzailea"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/qr-orria.php:37
+msgid "QR kodea sortzeko erabilitako web-zerbitzua:"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/qr-orria.php:38
+msgid "QRickit"
+msgstr ""
+
+#: D:\Manex\Proiektua\Wordpress\ohar-itzultzailea/qr-orria.php:40
+msgid "QRickiten logoa erakusten duen irudia"
+msgstr ""

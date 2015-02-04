@@ -1,0 +1,180 @@
+
+	/*
+	 * 
+	  *	 OharItzultzailea: WordPress plugin that carries out machine translations (Google Translate), TTS (VoiceRSS) and QR code creation (QRickit) for enabling the creation of multilingual content.
+	  *
+	  *  Copyright (C) 2015  Manex Garaio Mendizabal
+	  *
+	  *  This program is free software: you can redistribute it and/or modify
+	  *  it under the terms of the GNU General Public License as published by
+	  *  the Free Software Foundation, either version 3 of the License, or
+	  *  (at your option) any later version.
+	  *
+	  *  This program is distributed in the hope that it will be useful,
+	  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+	  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	  *  GNU General Public License for more details.
+	  *
+	  *  You should have received a copy of the GNU General Public License
+	  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	  *  
+	  *  You may contact the author by e-mail at the following address: manex.garaio@gmail.com
+	  **/
+	
+	/*
+	*	Itzulpen-orria fitxategiaren estiloa definitzen duen estilo-orria
+	*/
+	
+	#goiburua
+	{
+		background-color:#F0F0F0 ;
+	}
+	
+	#testuRadioZutabea
+	{
+		padding-right:10px;
+	}
+	
+	.hautatzailea
+	{
+		width:120px;
+		margin-bottom:15px;
+		margin-top:15px;
+		border: 1px solid;
+	}
+	
+	
+	#izenburua,#taula, #QRkodea, #izenburuak,#radioBotoiMultzoa
+	{
+		text-align:center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#testuRadioEtiketa,#izenburuRadioEtiketa
+	{
+		font-size:18px;
+	}
+	
+	#izenburua
+	{
+		padding-top:45px;
+		text-align:center;
+	}
+	
+	#formulategia
+	{
+		padding-top:30px;
+
+	}
+	
+	.zutabea
+	{
+		padding:15px;
+	}
+	
+	.testuKutxa
+	{
+		border: 1px solid;
+	}
+	
+	.testuKutxa:hover
+	{
+		box-shadow: inset 1px 1px 1px 1px gray;
+	}
+	
+	.testuKutxa:focus
+	{
+		border:1px solid #0066FF;
+	}
+	
+	#helburuTestua {
+		background-color : #F8F8F8;
+	}
+	
+	#aitortza
+	{
+		text-align:center;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top:40px;
+		padding-bottom:10px;
+	}
+
+	
+	/*
+	*	Hemendik aurrera dagoen CSS-a http://livetools.uiparade.com/button-builder.html# webgunetik atera da, hor erabilgarri dagoen botoi sortzailetik, alegia.
+	*/
+	.botoia {
+   border: 1px solid #0a3c59;
+   background: #c3d4de;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e1ebf2), to(#c3d4de));
+   background: -webkit-linear-gradient(top, #e1ebf2, #c3d4de);
+   background: -moz-linear-gradient(top, #e1ebf2, #c3d4de);
+   background: -ms-linear-gradient(top, #e1ebf2, #c3d4de);
+   background: -o-linear-gradient(top, #e1ebf2, #c3d4de);
+   background-image: -ms-linear-gradient(top, #e1ebf2 0%, #c3d4de 100%);
+   padding: 9px 18px;
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   border-radius: 12px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #7ea4bd 0 1px 0;
+   color: #080808;
+   font-size: 14px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+   
+.botoia:hover {
+   border: 1px solid #0a3c59;
+   text-shadow: #1e4158 0 1px 0;
+   background: #94c8eb;
+   background: -webkit-gradient(linear, left top, left bottom, from(#afd6f0), to(#94c8eb));
+   background: -webkit-linear-gradient(top, #afd6f0, #94c8eb);
+   background: -moz-linear-gradient(top, #afd6f0, #94c8eb);
+   background: -ms-linear-gradient(top, #afd6f0, #94c8eb);
+   background: -o-linear-gradient(top, #afd6f0, #94c8eb);
+   background-image: -ms-linear-gradient(top, #afd6f0 0%, #94c8eb 100%);
+   color: #0a0a0a;
+   }
+   
+.botoia:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 1px solid #0a3c59;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#94c8eb));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
+   color: #fff;
+   }
+   
+   .ezgaitua {
+		text-shadow: #f7f9fa 0 1px 0;
+   border: 1px solid #2f3030;
+   background: #e4ebf0;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e4e9ed), to(#94c8eb));
+   background: -webkit-linear-gradient(top, #e4e9ed, #e4ebf0);
+   background: -moz-linear-gradient(top, #e4e9ed, #e4ebf0);
+   background: -ms-linear-gradient(top, #e4e9ed, #e4ebf0);
+   background: -o-linear-gradient(top, #e4e9ed, #e4ebf0);
+   background-image: -ms-linear-gradient(top, #e4e9ed 0%, #e4ebf0 100%);
+   color: #575454;
+   padding: 9px 18px;
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   border-radius: 12px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   font-size: 14px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }

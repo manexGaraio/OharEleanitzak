@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+    <item
+        android:id="@+id/konfigurazioa"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:orderInCategory="97"
+        android:showAsAction="ifRoom"
+        android:title="@+string/action_settings"/>
+    
+    <item
+        android:id="@+id/irakurritakoKodeak"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:orderInCategory="98"
+        android:showAsAction="ifRoom"
+        android:title="@+string/historia"/>
+    
+    <item
+        android:id="@+id/laguntza"
+        android:icon="@android:drawable/ic_menu_help"
+        android:orderInCategory="99"
+        android:showAsAction="withText"
+        android:title="@+string/laguntza"/>
+
+</menu>

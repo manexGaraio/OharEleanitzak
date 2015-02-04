@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="action_settings">Configuración</string>
+  <string name="eskaneatzen">Dixitalización&#8230;</string>
+  <string name="urlOharIzena">Aviso</string>
+  <string name="urlOharra">A aplicación leva-lo para o seguinte sitio web:</string>
+  <string name="urlOnartu">Aceptar</string>
+  <string name="urlEzeztatu">Rexeitar</string>
+  <string name="berbideratzeaAutomatikokiOnartuIzenburua">Aceptar o redirección automática</string>
+  <string name="berbideratzeaAutomatikokiOnartua">Os enderezos web lidos a través da aplicación será acceder automaticamente \n(Non recomendado en termos de seguridade)</string>
+  <string name="berbideratzeaAutomatikokiEzeztatua">Os enderezos web lidos a través da aplicación terá que ser aceptado antes de acceder \n(configuración recomendada)</string>
+  <string name="instantziaGaizki">A cámara non pode ser aberto. Asegúrese de que algún outro programa está a usar a cámara e ténteo de novo.</string>
+  <string name="ezDaKoderikIrakurri">A historia está baleira</string>
+  <string name="historia">Historia</string>
+  <string name="historiaGarbitu">Eliminar historial</string>
+  <string name="historiaEzabatuOharra">Toda a súa historia será eliminado</string>
+  <string name="urlEzegokiaIzena">Código incompatible</string>
+  <string name="urlEzegokia">O código que acaba de ler non é compatible coa aplicación, xa que non apunta a un sitio</string>
+  <string name="gaur">Hoxe</string>
+  <string name="atzo">Onte</string>
+  <string name="azkenAstea">Semana pasada</string>
+  <string name="azkenHilabetea">Mes pasado</string>
+  <string name="zaharragoak">Máis vello</string>
+  <string name="aplikazioarenHizkuntzaHautatu">Idioma</string>
+  <string name="aplikazioarenHizkuntzaHautatuAzalpena">Cambiar o idioma da aplicación</string>
+  <string name="laguntza">Axuda</string>
+  <string name="laguntzaHasiera">OharEleanitzak é a aplicación utilizado para a visualización de contidos multilingüe usando códigos QR. Se precisa de axuda con calquera dos recursos de prensa sobre a icona correspondente a continuación:</string>
+  <string name="qrIrakurlea">Lector de QR</string>
+  <string name="qrIrakurleaLaguntza">Axuda asociado co lector de QR</string>
+  <string name="ezarpenakLaguntza">Axuda asociado con a configuración da aplicación</string>
+  <string name="historiaLaguntza">Axuda asociado coa historia da aplicación</string>
+  <string name="qrLaguntzaTestua"><p>Para acceder ao contido do museo a partir do seu teléfono móbil que precisa para dixitalizar un código QR. Un código QR ten esta forma: </p></string>
+  <string name="qrLaguntzaTestuaJarraipena"><p>Co fin de facer a pescudas do código, o código debe ser enfocada nas imaxes que aparecen na pantalla. Xa que a aplicación que dixitalizado o código, o seu contido será revisado para ver se contén unha url e si é así, haberá dous xeitos diferentes de seguir: \n\n</p>
+      <ul>
+          <li>Se a definición de \'Aceptar o redirección automática\' está activada a url será acceder directamente nun navegador \n\n</li>
+          <li>Se a definición de \'Aceptar o redirección automática\' está desactivada, o usuario terá que autorizar a url a acceder</li>
+      </ul>
+  </string>
+  <string name="ezarpenakLaguntzaTestua"><p>Hai dúas accións diferentes que se poden realizar na pantalla de \'Configuración\': \n\n</p>
+      <ul>
+          <li><u>\'Aceptar o redirección automática\':</u> Esta configuración especifica se os códigos de lectura co escáner será acceder inmediatamente ou será necesaria a autorización do usuario. A recomendación é para que esta configuración ser desactivado para mellora de seguridade \n\n</li>
+          <li><u>\'Idioma\':</u> Esta configuración pode axustar o idioma da aplicación, o que terá un impacto directo sobre a linguaxe do contido acceder a través dos códigos QR de OharEleanitzak</li>
+      </ul>  
+  </string>
+  <string name="historiaLaguntzaTestua"><p>A pantalla \'Historia\' se pode usar para xestionar a historia da aplicación. Será capaz de acceder os códigos previamente lidos sen re-le-los, ademais de eliminar o historial actual usando a opción no menú de opcións</p></string>
+  <string name="ezDagoLaguntzarik">Non hai axuda asociada a este tema</string>
+  <string name="laguntzaHasieraraItzuli"><u>&lt;- Voltar Iniciar Axuda</u></string>
+  <string name="qrIrudiarenAzalpena">Esta imaxe é usada para mostrar como un código QR parece</string>
+  <string name="adi">Atención</string>
+  <string name="dbGarbitzeanErrorea">Produciuse un erro ao eliminar o historial:</string>
+  <string name="qrHizkuntzaEzartzeanErrorea">Produciuse un erro ao definir o idioma do contido do código QR. Por favor, ténteo de novo</string>
+</resources>

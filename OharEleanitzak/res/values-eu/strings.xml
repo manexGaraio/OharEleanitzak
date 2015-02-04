@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Ezarpenak</string>
+    <string name="eskaneatzen">Eskaneatzen&#8230;</string>
+    <string name="urlOharIzena">Oharra</string>
+   	<string name="urlOharra">Aplikazioak webgune honetara eramango zaitu: </string>
+   	<string name="urlOnartu">Onartu</string>
+   	<string name="urlEzeztatu">Ezeztatu</string>
+   	<string name="berbideratzeaAutomatikokiOnartuIzenburua">Birbideratzea automatikoki onartu</string>
+   	<string name="berbideratzeaAutomatikokiOnartua">QR irakurleak irakurritako web helbide guztiak zuzenean atzituko dira \n(Ez da gomendagarria segurtasun aldetik)</string>
+	<string name="berbideratzeaAutomatikokiEzeztatua">Atzitu aurretik, aplikazioak irakurritako web helbide guztiak erabiltzaileak onartu beharko ditu \n(Gomendatutako ezarpena)</string>
+	<string name="instantziaGaizki">Kamera ezin izan da ireki. Mesedez egiaztatu beste aplikazioaren bat ez dela kamera erabiltzen ari eta saiatu berriro.</string>
+	<string name="ezDaKoderikIrakurri">Historia hutsik dago</string>
+	<string name="historia">Historia</string>
+	<string name="historiaGarbitu">Historia garbitu</string>
+	<string name="historiaEzabatuOharra">Historia ezabatu egingo da</string>
+	<string name="urlEzegokiaIzena">Kode ezegokia</string>
+	<string name="urlEzegokia">Irakurri berri duzun kodea ezegokia da, ez baitio webgune bati erreferentzia egiten</string>
+	<string name="gaur">Gaur</string>
+	<string name="atzo">Atzo</string>
+	<string name="azkenAstea">Azken astea</string>
+	<string name="azkenHilabetea">Azken hilabetea</string>
+	<string name="zaharragoak">Zaharragoak</string>
+	<string name="aplikazioarenHizkuntzaHautatu">Hizkuntza</string>
+    <string name="aplikazioarenHizkuntzaHautatuAzalpena">Aldatu aplikazioaren hizkuntza</string>
+    <string name="laguntza">Laguntza</string>
+    <string name="laguntzaHasiera">OharEleanitzak aplikazioa eduki eleanitza ikusteko erabiltzen da, hori ahalbidetzeko QR kodeak erabiliz. Funtzioetako batekin laguntzarik behar izatekotan sakatu dagokion irudia: </string>
+	<string name="qrIrakurlea">QR irakurlea</string>
+	<string name="qrIrakurleaLaguntza">QR irakurlearekin lotutako laguntza</string>
+	<string name="ezarpenakLaguntza">Aplikazioaren ezarpenekin lotutako laguntza</string>
+	<string name="historiaLaguntza">Aplikazioaren historiarekin lotutako laguntza</string>
+	<string name="qrLaguntzaTestua"><p>Museoaren edukiak zure telefono mugikorrean ikusi ahal izateko QR kode bat irakurri behar duzu. Jarraian erakusten da QR kode baten adibidea: </p></string>
+	<string name="qrLaguntzaTestuaJarraipena"><p>QR kode bat irakurtzeko enfoka ezazu kodea pantailan agertzen zaizkizun irudietan. Aplikazioak kodea irakurtzean kode horrek url helbide bat gordetzen al duen egiaztatuko du. Horrela bada, erantzuteko bi modu egongo dira: \n\n</p>
+	    <ul>
+	        <li>\'Birbideratzea automatikoki onartu\' ezarpena gaituta badago helbidea zuzenean irekiko da arakatzailearekin \n \n</li>
+	        <li>\'Birbideratzea automatikoki onartu\' ezarpena ezgaituta badago erabiltzaileak helbide hori irekitzeko baimena eman beharko du</li>
+	    </ul>
+	</string>
+	<string name="ezarpenakLaguntzaTestua"><p>\'Ezarpenak\' pantailan bi ekintza burutu daitezke: \n\n</p>
+	    <ul>
+	        <li><u>\'Birbideratzea automatikoki onartu\':</u> Ezarpen honen bidez zehaztuko da irakurritako QR kodeak zuzenean irekiko diren ala baimenduak izan beharko al diren. Segurtasuna indartzeko, ezarpen hau ezgaitzea gomendatzen da \n\n</li>
+	    	<li><u>\'Hizkuntza\':</u> Ezarpen honek aplikazioaren hizkuntza zehazten du, OharEleanitzak-en kodeak irakurri eta edukia erakusterako orduan eduki horrek izango duen hizkuntzan eragin zuzena izango duena</li>
+	    </ul>
+	</string>
+	<string name="historiaLaguntzaTestua"><p>\'Historia\' izeneko pantaila aplikazioaren historia kudeatzeko erabiltzen da. Aldez aurretik irakurritako kodeak atzitzeko aukera egongo da berriro irakurri eta era berean historia ezabatzeko aukera ere badago</p></string>
+	<string name="ezDagoLaguntzarik">Ez dago laguntzarik atal honetarako</string>
+	<string name="laguntzaHasieraraItzuli"><u>&lt;- Laguntza hasierara itzuli</u></string>
+	<string name="qrIrudiarenAzalpena">Irudi hau QR kode batek duen itxura erakusteko erabiltzen da</string>
+	<string name="adi">Adi</string>
+	<string name="dbGarbitzeanErrorea">Errore bat gertatu da historia ezabatzean: </string>
+	<string name="qrHizkuntzaEzartzeanErrorea">Errore bat gertatu da QR kode bidez irakurritako edukiari hizkuntza zehaztean. Mesedez, saiatu berriro</string>
+</resources>

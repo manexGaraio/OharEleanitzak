@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Configuració</string>
+    <string name="eskaneatzen">Escanejant&#8230;</string>
+    <string name="urlOharIzena">Avís</string>
+   	<string name="urlOharra">La aplicació et portarà a la següent plana web: </string>
+   	<string name="urlOnartu">Acceptar</string>
+   	<string name="urlEzeztatu">Rebutjar</string>
+   	<string name="berbideratzeaAutomatikokiOnartuIzenburua">Acceptar la redirecció automàticament</string>
+   	<string name="berbideratzeaAutomatikokiOnartua">Les adreces web que es llegeixin mitjançant el lector QR s\'accedirà automàticament \n(No és recomanable per motius de seguretat)</string>
+	<string name="berbideratzeaAutomatikokiEzeztatua">Abans d\'accedir-hi, totes les adreces web que es llegeixin mitjançant el lector QR hauràn de ser acceptades \n(Configuració recomanada)</string>
+	<string name="instantziaGaizki">La càmera no s\'ha pogut obrir. Siusplau, assegura\'t que cap altra aplicació està utilitzant la càmera i torna-ho a provar. </string>
+	<string name="ezDaKoderikIrakurri">L\'historial està buit</string>
+	<string name="historia">Historial</string>
+	<string name="historiaGarbitu">Esborrar l\'historial</string>
+	<string name="historiaEzabatuOharra">¿Vols esborrar l\'historial?</string>
+	<string name="urlEzegokiaIzena">Codi incompatible</string>
+	<string name="urlEzegokia">El codi que acabes de llegir no és compatible amb la aplicació, ja que no assenyala a un plana web</string>
+	<string name="gaur">Avui</string>
+	<string name="atzo">Ahir</string>
+	<string name="azkenAstea">Última setmana</string>
+	<string name="azkenHilabetea">Últim mes</string>
+	<string name="zaharragoak">Més antic</string>
+	<string name="aplikazioarenHizkuntzaHautatu">Idioma</string>
+    <string name="aplikazioarenHizkuntzaHautatuAzalpena">Canvía l\'idioma de la aplicació</string>
+    <string name="laguntza">Ajuda</string>
+    <string name="laguntzaHasiera">OharEleanitzak és l\'aplicació utilitzada per a la visualització de continguts multilingües utilitzant codis QR. Si necessites ajuda amb alguna de les funcions prem sobre la imatge corresponent: </string>
+	<string name="qrIrakurlea">Lector QR</string>
+	<string name="qrIrakurleaLaguntza">Ajuda relacionada amb el lector QR</string>
+	<string name="ezarpenakLaguntza">Ajuda relacionada amb la configuració de la app</string>
+	<string name="historiaLaguntza">Ajuda relacionada amb la història de la app</string>
+	<string name="qrLaguntzaTestua"><p>Per a poder accedir al contingut del museu al teu telèfon mòbil necessites llegir un codi QR. A continuació es mostra un exemple de codi QR: </p></string>
+	<string name="qrLaguntzaTestuaJarraipena"><p>Per a llegir un codi QR enfoca el codi a les imatges que apareixen a la pantalla. Un cop la app ha llegit el codi el contingut serà inspeccionat per veure si conté una direcció url. Si es així hi haurà dues maneres diferents de procedir:  \n\n</p>
+	    <ul>
+	        <li>Si el reglatge “Acceptar la redirecció automàticament” està activat la url serà accedida directament mitjançant el navegador. \n \n</li>
+	        <li>Si el reglatge “Acceptar la redirecció automàticament” està desactivat l\’usuari haurà d\’autoritzar l\’accés de la url.</li>
+	    </ul>
+	</string>
+	<string name="ezarpenakLaguntzaTestua"><p>A la pantalla “Configuració” es poden dur a terme dues accions: \n\n</p>
+	    <ul>
+	        <li><u>“Acceptar la redirecció automàticament”: </u> Aquest reglatge especifica si el codi llegit amb el lector serà accedit directament o requerirà la autorització de l\’usuari. Es recomana deshabilitar aquest reglatge per a reforçar la seguretat \n\n</li>
+	    	<li><u>“Idioma”: </u> Aquest reglatge defineix l\’idioma de la app, el que tindrà un impacte directe en l\’idioma en que el contingut dels codis QR d\’OharEleanitzak seran visualitzats</li>
+	    </ul>
+	</string>
+	<string name="historiaLaguntzaTestua"><p>La pantalla “Història” s\’utilitza per a gestionar la història de la app. Podràs accedir els codis llegits anteriorment sense haver de llegir-los novament, amés de disposar de la opció d\’esborrar l\’historial
+</p></string>
+	<string name="ezDagoLaguntzarik">No hi ha ajuda associada a aquest tema</string>
+	<string name="laguntzaHasieraraItzuli"><u>&lt;- Tornar a la Ajuda Principal</u></string>
+	<string name="qrIrudiarenAzalpena">Aquesta imatge s\’utilitza per a illustrar l\’aspecte d\’un codi QR</string>
+	<string name="adi">Atenció</string>
+	<string name="dbGarbitzeanErrorea">Hi ha hagut un error al esborrar l\’historial: </string>
+	<string name="qrHizkuntzaEzartzeanErrorea">Hi ha hagut un error al assignar l\’idioma per al contingut del codi QR. Si us plau, torna-ho a provar</string>
+</resources>

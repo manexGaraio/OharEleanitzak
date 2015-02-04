@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Configuración</string>
+    <string name="eskaneatzen">Escaneando&#8230;</string>
+    <string name="urlOharIzena">Aviso</string>
+   	<string name="urlOharra">La app te llevará a esta página web: </string>
+   	<string name="urlOnartu">Aceptar</string>
+   	<string name="urlEzeztatu">Rechazar</string>
+   	<string name="berbideratzeaAutomatikokiOnartuIzenburua">Aceptar la redirección automáticamente</string>
+   	<string name="berbideratzeaAutomatikokiOnartua">Las direcciones web que se lean mediante la app serán accedidas automáticamente \n(No se recomienda en aras de la seguridad)</string>
+	<string name="berbideratzeaAutomatikokiEzeztatua">Antes de ser accedidas, las direcciones web que se lean mediante  la app tendrán que ser aceptadas \n(Configuración recomendada)</string>
+	<string name="instantziaGaizki">La cámara no se ha podido abrir. Por favor, revisa que ninguna otra aplicación está usando la cámara e inténtalo otra vez. </string>
+	<string name="ezDaKoderikIrakurri">El historial está vacio</string>
+	<string name="historia">Historial</string>
+	<string name="historiaGarbitu">Borrar historial</string>
+	<string name="historiaEzabatuOharra">El historial será borrado del terminal</string>
+	<string name="urlEzegokiaIzena">Código incompatible</string>
+	<string name="urlEzegokia">El código que acabas de leer no es compatible con la aplicación, ya que no señala a una página web</string>
+	<string name="gaur">Hoy</string>
+	<string name="atzo">Ayer</string>
+	<string name="azkenAstea">Última semana</string>
+	<string name="azkenHilabetea">Último mes</string>
+	<string name="zaharragoak">Más antiguo</string>
+	<string name="aplikazioarenHizkuntzaHautatu">Idioma</string>
+    <string name="aplikazioarenHizkuntzaHautatuAzalpena">Cambia el idioma de la app</string>
+    <string name="laguntza">Ayuda</string>
+    <string name="laguntzaHasiera">OharEleanitzak es la app que se utiliza para habilitar la visualización de contenido multilingüe utilizando códigos QR. Si necesitas ayuda con alguna de las funciones pulsa sobre la imagen correspondiente: </string>
+	<string name="qrIrakurlea">Lector QR</string>
+	<string name="qrIrakurleaLaguntza">Ayuda relacionada con el lector QR</string>
+	<string name="ezarpenakLaguntza">Ayuda relacionada con la configuración de la app</string>
+	<string name="historiaLaguntza">Ayuda relacionada con la historia de la app</string>
+	<string name="qrLaguntzaTestua"><p>Para poder acceder el contenido del museo en tu teléfono móvil necesitas leer un código QR. Un ejemplo de código QR se muestra a continuación: </p></string>
+	<string name="qrLaguntzaTestuaJarraipena"><p>Para leer un código QR enfoca el código en las imágenes que te aparecen en pantalla. Una vez la app ha leído el código el contenido será inspeccionado para ver si contiene una dirección url. Si es así habrá dos maneras diferentes de proceder: \n\n</p>
+	    <ul>
+	        <li>Si el reglaje \'Aceptar la redirección automáticamente\' está activado la url será accedida directamente mediante el navegador \n \n</li>
+	        <li>Si el reglaje \'Aceptar la redirección automáticamente\' está desactivado el usuario tendrá que autorizar el acceso de la url</li>
+	    </ul>
+	</string>
+	<string name="ezarpenakLaguntzaTestua"><p>En la pantalla \'Configuración\' se pueden llevar a cabo dos acciones: \n\n</p>
+	    <ul>
+	        <li><u>\'Aceptar la redirección automáticamente\':</u> Este reglaje especifica si el código leído con el lector será accedido directamente o si requerirá autorización del usuario. Se recomienda deshabilitar este reglaje para reforzar la seguridad \n\n</li>
+	    	<li><u>\'Idioma\':</u> Este reglaje define el idioma de la app, lo que tendrá un impacto directo en el idioma en el que el contenido de los códigos QR de OharEleanitzak serán visualizados</li>
+	    </ul>
+	</string>
+	<string name="historiaLaguntzaTestua"><p>La pantalla \'Historia\' se usa para gestionar la historia de la app. Podrás acceder los códigos leídos anteriormente sin tener que leerlos de nuevo, además de disponer de la opción de borrar el historial</p></string>
+	<string name="ezDagoLaguntzarik">No hay ayuda asociada a este tema</string>
+	<string name="laguntzaHasieraraItzuli"><u>&lt;- Volver a la Ayuda Principal</u></string>
+	<string name="qrIrudiarenAzalpena">Esta imagen se usa para ilustrar el aspecto de un código QR</string>
+	<string name="adi">Atención</string>
+	<string name="dbGarbitzeanErrorea">Un error ha ocurrido al borrar el historial: </string>
+	<string name="qrHizkuntzaEzartzeanErrorea">Un error ha ocurrido al asignar el idioma para el contenido del código QR. Por favor, inténtalo de nuevo</string>
+</resources>
