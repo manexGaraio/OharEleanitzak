@@ -1,0 +1,1267 @@
+/*
+Theme Name: Tiny Forge Child Example
+Theme URI: http://mtomas.com/1/tiny-forge-free-mobile-first-wordpress-theme
+Author: Tomas Mackevicius
+Author URI: http://mtomas.com
+Description: Tiny Forge Child Example theme encompass all the best features of the default WordPress themes in one place, plus more usability and code improvements! It features elegant mobile-first HTML5 ready structure of Twenty Twelve, custom per-post headers and three footer widgets from Twenty Eleven (plus forth footer widget to insert your copyright information), icon webfont support from Elusive-Icons and Schema.org microdata format support. It's all there, you have everything in one neat package. Also you can upload your custom Header Logo to display it next to Site Title and Description. Tiny Forge and its child themes can be used as a learning tool or your own little web development "framework". With its unique "Coding Tips system" Tiny Forge helps to understand how to extend parent themes and build your own child themes, hacking them the way you want it. You get the best coding examples from default WordPress themes and the best hacks from the child theme. Please read readme.txt for a quick start guide. For more information please see: http://mtomas.com/389/tiny-forge-framework-child-themes-comprehensive-guide
+Template: tiny-forge
+Version: 1.5.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: tinyforgechild
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Notes
+--------------------------------------------------------------
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:     14;
+$line-height: 24;
+
+We use rem for: font-size, margin, padding, width, max-width when using in px.
+
+---------- Examples
+
+	padding: 5px 0;
+	padding: 0.357142857rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.142857143rem; (16 / $rembase)
+	line-height: 1.5; ($line-height / 16)
+
+---------- Vertical spacing
+
+Vertical spacing between most elements should use 24px or 48px to maintain vertical rhythm:
+
+.my-new-div {
+	margin: 24px 0;
+	margin: 1.714285714rem 0; ( 24 / $rembase )
+}
+
+---------- Further reading
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+*/
+
+
+/* Table of Contents:
+ *
+ *  1.0 - Reset
+ *    1.1 - Clearing floats
+ *  2.0 - Repeatable Patterns
+ *    2.1 - Small headers
+ *    2.2 - Shared Post Format styling
+ *    2.3 - Form fields, general styles first
+ *    2.4 - Reset non-text input types
+ *    2.5 - Buttons
+ *    2.6 - Responsive images
+ *    2.7 - Images
+ *    2.8 - Navigation
+ *    2.9 - Author profiles
+ *    2.10 - Alerts
+ *  3.0 - Site Structure
+ *    3.1 - Body, links, basics
+ *    3.2 - Assistive text
+ *    3.3 - Page structure
+ *    3.4 - Header
+ *      3.4.1 - Site Header
+ *      3.4.2 - Navigation
+ *      3.4.3 - Banner
+ *    3.5 - Sidebar
+ *    3.6 - Footer
+ *  4.0 - Main content and comment content
+ *  5.0 - Archives
+ *  6.0 - Attachment views
+ *    6.1 - Single audio/video attachment view
+ *    6.2 - Single image attachment view
+ *  7.0 - Post formats
+ *    7.1 - Aside post format
+ *    7.2 - Image posts
+ *    7.3 - Link posts
+ *    7.4 - Quote posts
+ *    7.5 - Status posts
+ *  8.0 - Comments
+ *    8.1 - Comment form
+ *    8.2 - Custom styles for Schema.org microdata format support implementation
+ *  9.0 - Page templates
+ *    9.1 - Front page template
+ *    9.2 - Links (blogroll) template
+ * 10.0 - Widgets
+ * 11.0 - Plugins
+ * 12.0 - Media queries
+ *   12.1 - Minimum width of 770 pixels
+ *   12.2 - Minimum width of 960 pixels
+ *   12.3 - Minimum width of 1250 pixels
+ *   12.4 - Retina-specific styles. This style cannot be processed by LESS
+ * 13.0 - Print
+ *   13.1 - Comments
+ * 14.0 - Other styles
+ *   14.1 - Tip23 - Properly resize videos, inserted with oembed
+ *   14.2 - Elusive-icons webfont
+ *   14.3 - Other styles
+ * ----------------------------------------------------------------------------
+ */
+
+/* Sizes in rem units - you don't have to change anything here */
+
+@size-rem-1px: 0.071428571rem;
+@size-rem-2px: 0.142857143rem;
+@size-rem-3px: 0.214285714rem;
+@size-rem-4px: 0.285714286rem;
+@size-rem-5px: 0.357142857rem;
+@size-rem-6px: 0.428571429rem;
+@size-rem-7px: 0.5rem;
+@size-rem-8px: 0.571428571rem;
+@size-rem-9px: 0.642857143rem;
+@size-rem-10px: 0.714285714rem;
+@size-rem-12px: 0.857142857rem;
+@size-rem-13px: 0.928571429rem;
+@size-rem-14px: 1rem;
+@size-rem-15px: 1.071428571rem;
+@size-rem-16px: 1.142857143rem;
+@size-rem-18px: 1.285714286rem;
+@size-rem-22px: 1.571428571rem;
+@size-rem-23px: 1.642857143rem;
+@size-rem-24px: 1.714285714rem;
+@size-rem-25px: 1.785714286rem;
+@size-rem-26px: 1.857142857rem;
+@size-rem-27px: 1.928571428rem;
+@size-rem-28px: 2rem;
+@size-rem-30px: 2.142857143rem;
+@size-rem-32px: 2.285714286rem;
+@size-rem-34px: 2.428571429rem;
+@size-rem-36px: 2.571428571rem;
+@size-rem-38px: 2.714285714rem;
+@size-rem-40px: 2.857142857rem;
+@size-rem-44px: 3.142857143rem;
+@size-rem-48px: 3.428571429rem;
+
+/* Font size values - must be changed together for px and rem values */
+
+@body-font-size: 14px;
+@body-font-size-rem: @size-rem-14px;
+
+@entry-title-font-size: 36px;
+@entry-title-font-size-rem: @size-rem-36px;
+@entry-title-font-weight: normal;
+@entry-title-line-height: 1.2;
+
+@other-titles-font-size: 27px;
+@other-titles-font-size-rem: @size-rem-27px;
+@other-titles-font-weight: normal;
+@other-titles-line-height: 1.2;
+
+@entry-p-line-height: 1.714285714;
+
+@entry-single-font-size: 16px;
+@entry-single-font-size-rem: @size-rem-16px;
+@entry-single-p-line-height: 1.8;
+
+@entry-h1-font-size: 23px;
+@entry-h1-font-size-rem: @size-rem-23px;
+@entry-h1-font-weight: normal;
+@entry-h1-line-height: 1.5;
+
+@entry-h2-font-size: 23px;
+@entry-h2-font-size-rem: @size-rem-23px;
+@entry-h2-font-weight: normal;
+@entry-h2-line-height: 1.5;
+
+@entry-h3-font-size: 18px;
+@entry-h3-font-size-rem: @size-rem-18px;
+@entry-h3-font-weight: bold;
+@entry-h3-line-height: 1.6;
+
+@entry-h4-font-size: 16px;
+@entry-h4-font-size-rem: @size-rem-16px;
+@entry-h4-font-weight: bold;
+@entry-h4-line-height: 1.846153846;
+
+@entry-h5-font-size: 14px;
+@entry-h5-font-size-rem: @size-rem-14px;
+@entry-h5-font-weight: bold;
+@entry-h5-line-height: 1.846153846;
+
+@entry-h6-font-size: 13px;
+@entry-h6-font-size-rem: @size-rem-13px;
+@entry-h6-font-weight: bold;
+@entry-h6-line-height: 1.846153846;
+
+@widget-title-font-size: 27px;
+@widget-title-font-size-rem: @size-rem-27px;
+@widget-title-font-weight: normal;
+@widget-title-line-height: 1.2;
+
+/* Site colors */
+
+// Single-line comments are also valid in LESS, but they are 'silent', they don't show up in the compiled CSS output.
+
+@site-title-color: #333; // dark grey
+@site-title-hover-color: #fc9f00; // orange
+
+@body-background-color: #e6e6e6; // grey - starts from minimum width of 960 pixels
+@body-text-color: #333; // dark grey
+@body-link-color: #0066cc; // standard blue
+@body-link-visited-color: #800080; // standard purple
+@body-link-hover-color: #fc9f00; // orange
+
+@entry-title-color: #333; // dark grey
+@entry-title-hover-color: #fc9f00; // orange
+@entry-meta-color: #555; // grey
+@entry-meta-hover-color: #fc9f00; // orange
+@article-background-color: #fff; // white
+@article-gradient-color-1: #fbfbfb; // very light grey
+@article-gradient-color-2: #fff; // white
+@nav-previous-next-color: #fc9f00; // orange
+@nav-previous-next-hover-color: #fc9f00; // orange
+
+@archive-title-color: #8dc919; // green
+@headers-color: #333; // dark grey
+@blockquote-color: #6f9b17; // dark green
+@icon-color: #8dc919; // green
+
+@widget-title-color: #fc9f00; // orange
+@widget-icon-color: #777; // light grey
+@widget-area-color: #555; // grey
+@sidebar-nav-color: #555; // grey
+@sidebar-nav-hover-color: #fc9f00; // orange
+@sidebar-nav-current-cat: #fc9f00; // orange (current and parent categories or pages)
+
+@footer-background-color: #fff; // white
+@footer-gradient-color-1: #fbfbfb; // very light grey
+@footer-gradient-color-2: #fff; // white
+@footer-link-color: #333; // dark grey
+@footer-link-hover-color: #fc9f00; // orange
+@footer-widgets-color: #555; // dark grey
+@footer-widgets-hover-color: #fc9f00; // orange
+
+/* 1.0 Reset
+-------------------------------------------------------------- */
+
+
+
+/* 1.1 Clearing floats */
+
+
+
+/* 2.0 Repeatable patterns
+-------------------------------------------------------------- */
+
+/* 2.1 Small headers */
+.archive-title,
+.page-title,
+.entry-content th,
+.comment-content th {
+	font-size: @other-titles-font-size;
+	font-size: @other-titles-font-size-rem;
+	font-weight: @other-titles-font-weight;
+	line-height: @other-titles-line-height;
+	text-transform: uppercase;
+	color: @headers-color;
+}
+.archive-title,
+.search-results .page-title {
+	color: @archive-title-color;
+}
+.widget-title {
+	font-size: @widget-title-font-size;
+	font-size: @widget-title-font-size-rem;
+	font-weight: @widget-title-font-weight;
+	line-height: @widget-title-line-height;
+	text-transform: uppercase;
+	color: @widget-title-color;
+}
+
+/* 2.2 Shared Post Format styling */
+
+
+/* 2.3 Form fields, general styles first */
+
+
+/* 2.4 Reset non-text input types */
+
+
+/* 2.5 Buttons */
+
+
+/* 2.6 Responsive images */
+
+
+/* 2.7 Images */
+
+/* Tip06 - Custom headers for posts and pages. Uncomment following CSS rules to disable border and shadow on main header: */
+/*
+img.header-image,
+.site-header img.wp-post-image {
+	border-radius: 0;
+	box-shadow: none;
+}
+*/
+
+/* Tip12 - to disable header image for the Front Page Template to have classic Twenty Twelve front page look, uncomment next 4 lines: */
+/*
+.template-front-page img.header-image,
+.template-front-page .site-header img.wp-post-image {
+	display: none;
+}
+*/
+
+/* 2.8 Navigation */
+.nav-previous,
+.nav-next {
+	a {
+		&:link,
+		&:visited {
+			color: @nav-previous-next-color;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		&:hover,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+}
+/*  Tip27 - Uncomment next code line to disable previous article - next article navigation below the content of a post */
+/* 
+.nav-single {
+	display: none;
+}
+*/
+
+/* 2.9 Author profiles */
+
+
+/* 2.10 Alerts */
+
+
+
+/* 3.0 Site structure
+-------------------------------------------------------------- */
+
+/* 3.1 Body, links, basics */
+/*  Tip22 - Improve font rendering and fallback in Linux - http://www.onedesigns.com/tutorials/font-families-for-cross-compatible-typography */
+body {
+	/* Improving font rendering in Linux, in case default Open Sans font is disabled */
+	font-size: @body-font-size;
+	font-size: @body-font-size-rem;
+	font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	color: @body-text-color;
+	.custom-font-enabled {
+		/* Improving font fallback in Linux */
+		font-family: "Open Sans", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	}
+}
+a {
+	color: @body-link-color;
+	&:link {
+		color: @body-link-color;
+	}
+	&:visited {
+		color: @body-link-visited-color;
+	}
+	&:hover,
+	&:active {
+		color: @body-link-hover-color;
+	}
+}
+
+/* 3.2 Assistive text */
+
+
+/* 3.3 Page structure */
+
+
+/* 3.4 Header */
+
+/* 3.4.1 Site Header */
+
+
+/* 3.4.2 Navigation Menu */
+/* Small (mobile) menu */
+.site-header .menu-toggle {
+	background: #3a3a3a;
+	color: white;
+	font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	padding: 10px 22px;
+	padding: 0.714285714rem 1.571428571rem;
+	margin: 24px 0 0 0;
+	margin: 1.714285714rem 0 0 0;
+}
+.site-header .menu-toggle:hover {
+	background: #474747;
+}
+.site-header .menu-toggle:before {
+	content: '\2261';
+	font-size: 14px;
+	margin-right: 10px;
+	margin-right: 0.714285714rem;
+}
+.main-navigation.toggled .menu-toggle {
+	background: #474747;
+}
+.main-navigation.toggled a {
+	color: white;
+	padding: 10px 40px;
+	padding: 0.714285714rem 2.857142857rem;
+	text-decoration: none;
+}
+.main-navigation.toggled li a {
+	background: #3a3a3a;
+}
+.main-navigation.toggled li a:hover {
+	background: #474747;
+}
+.main-navigation.toggled ul > .current_page_item > a,
+.main-navigation.toggled ul > .current-menu-item > a {
+	background: #117bb8;
+}
+/* Tip10 - Add Twenty Thirteen search form to WordPress nav menu */
+.menu-item.menu-item-search {
+	float: right;
+	margin: 4px 0 0 0;
+	margin: 0.285714286rem 0 0 0;
+}
+.site-header {
+	input[type="search"] {
+		-webkit-appearance: textfield;
+		padding-right: 2px; // Don't cut off the webkit search cancel button
+		padding-right: @size-rem-2px; // Don't cut off the webkit search cancel button
+		width: 270px;
+		width: 19.285714286rem;
+	}
+	input[type="search"]::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+	.searchform [type="search"],
+	.searchform [type="text"] {
+		background-color: transparent;
+		background-image: url(images/icon-search.png);
+		background-position: 5px center;
+		background-repeat: no-repeat;
+		background-size: 24px 24px;
+		border: none;
+		cursor: pointer;
+		height: 28px;
+		margin: 3px 0;
+		margin: @size-rem-3px 0;
+		padding: 0 0 0 34px;
+		padding: 0 0 0 @size-rem-34px;
+		position: relative;
+		-webkit-transition: width 400ms ease, background 400ms ease;
+		transition:         width 400ms ease, background 400ms ease;
+		width: 0;
+	}
+	.searchform [type="search"]:focus,
+	.searchform [type="text"]:focus {
+		background-color: #f5f5f5;
+		border: 1px solid #bbb;
+		cursor: text;
+		outline: 0;
+		width: 230px;
+		width: 16.428571429rem;
+		-webkit-box-shadow: none;
+		   -moz-box-shadow: none;
+				box-shadow: none;
+	}
+	.searchform [type="submit"] {
+		display: none;
+	}
+}
+/* Hide top menu search in child themes for the mobile menu */
+.menu-item.menu-item-search {
+	display: none;
+}
+
+/* 3.4.3 Banner */
+
+
+/* 3.5 Sidebar */
+.widget-area {
+	.widget {
+		margin-bottom: 24px;
+		margin-bottom: @size-rem-24px;
+		color: @widget-area-color;
+		h3 {
+			margin-bottom: 24px;
+			margin-bottom: @size-rem-24px;
+		}
+		li {
+			list-style: none;
+			color: @widget-area-color;
+		}
+	}
+	aside.widget_categories {
+		ul {
+			margin-bottom: 12px;
+			margin-bottom: @size-rem-12px;
+			li {
+				font-size: 18px;
+				font-size: @size-rem-18px;
+				text-transform: uppercase;
+			}
+			ul li {
+				list-style: square;
+				font-size: 13px;
+				font-size: @size-rem-13px;
+				font-weight: normal;
+				margin-left: 10px;
+				margin-left: @size-rem-10px;
+				text-transform: none;
+			}
+		}
+	}
+	.widget a,
+	.widget a:link,
+	.widget a:visited,
+	.widget_categories a,
+	.widget_categories a:link,
+	.widget_categories a:visited,
+	.textwidget a,
+	.textwidget a:link,
+	.textwidget a:visited {
+		color: @sidebar-nav-color;
+		text-decoration: none;
+	}
+	.widget a:hover,
+	.widget a:active {
+		color: @sidebar-nav-hover-color;
+		text-decoration: underline;
+	}
+	.widget {
+		.children li.cat-item a:hover,
+		.children li.page_item a:hover,
+		.current-cat-parent  a:link,
+		.current-cat-parent  a:visited,
+		.current_page_parent a:link,
+		.current_page_parent  a:visited {
+			color: @sidebar-nav-current-cat;
+		}
+		.current-cat .cat-item a:link,
+		.current-cat .cat-item a:visited,
+		.current-cat-parent .cat-item a:link,
+		.current-cat-parent .cat-item a:visited,
+		.current_page_item .page_item a:link,
+		.current_page_item .page_item a:visited,
+		.current_page_parent .page_item a:link,
+		.current_page_parent .page_item a:visited {
+			color: @sidebar-nav-color;
+		}
+		.current-cat-parent .current-cat,
+		.current-cat-parent .current-cat  a:link,
+		.current-cat-parent .current-cat  a:visited,
+		.current_page_parent .current_page_item,
+		.current_page_parent .current_page_item  a:link,
+		.current_page_parent .current_page_item  a:visited,
+		.current-cat,
+		.current-cat  a:link,
+		.current-cat  a:visited,
+		.current_page_item,
+		.current_page_item  a:link,
+		.current_page_item  a:visited {
+			color: @sidebar-nav-current-cat;
+		}
+	}
+}
+/* Tip41 - Show children items of sidebar category/page menu for selected parent category/page only. Change to display: block; if you don't to hide menu children. */
+.widget-area .widget {
+	li.cat-item ul.children {
+		display: none;
+	}
+	li.current-cat ul.children,
+	li.current-cat-parent ul.children  {
+		display: block;
+	}
+}
+/* Show children items of sidebar page menu for selected parent page only. Change to display: block; if you don't to hide menu children. */
+.widget-area .widget {
+	li.page_item ul.children  {
+		display: none;
+	}
+	li.current_page_item ul.children,
+	li.current_page_parent ul.children  {
+		display: block;
+	}
+}
+
+/* 3.6 Footer */
+footer[role="contentinfo"] {
+	margin-top: 5px;
+	margin-top: @size-rem-5px;
+	padding: 12px 0 24px 0;
+	padding: @size-rem-12px 0 @size-rem-24px 0;
+	a {
+		color: @footer-link-color;
+		&:hover {
+			color: @footer-link-hover-color;
+		}
+	}
+}
+footer#colophon {
+  background: @footer-background-color;
+  /* Old browsers */
+
+  /* IE10 Consumer Preview */
+  background-image: -ms-radial-gradient(center top, circle closest-corner, @footer-gradient-color-1 0%, @footer-gradient-color-2 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-radial-gradient(center top, circle closest-corner, @footer-gradient-color-1 0%, @footer-gradient-color-2 100%);
+  /* Opera */
+  background-image: -o-radial-gradient(center top, circle closest-corner, @footer-gradient-color-1 0%, @footer-gradient-color-2 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, @footer-gradient-color-1), color-stop(1, @footer-gradient-color-2));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-radial-gradient(center top, circle closest-corner, @footer-gradient-color-1 0%, @footer-gradient-color-2 100%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: radial-gradient(circle closest-corner at center top, @footer-gradient-color-1 0%, @footer-gradient-color-2 100%);
+}
+#footer-widgets {
+	width: 100%;
+	border-top: none;
+	a,
+	a:link,
+	a:visited {
+		color: @footer-widgets-color;
+		text-decoration: none;
+	}
+	a:hover,
+	a:active {
+		color: @footer-widgets-hover-color;
+		text-decoration: underline;
+	}
+	.widget li,
+	.widget_recent_entries li {
+		list-style-type: none;
+		color: @footer-widgets-color;
+		margin-bottom: 24px;
+		margin-bottom: @size-rem-24px;
+	}
+}
+#site-generator {
+	width: 100%;
+	max-width: 200px;
+	max-width: 14.285714286rem;
+	float: right;
+	text-align: right;
+	a:link,
+	a:visited {
+		color: @footer-link-color;
+		text-decoration: none;
+	}
+	a:hover {
+		color: @footer-link-hover-color;
+		text-decoration: underline;
+	}
+}
+
+
+/* 4.0 Main content and comment content
+-------------------------------------------------------------- */
+
+.entry-header .entry-title {
+	color: @entry-title-color;
+	a {
+		color: @entry-title-color;
+		text-decoration: none;
+		&:hover {
+			color: @entry-title-hover-color;
+		}
+	}
+}
+.entry-header .comments-link {
+	margin-top: 12px;
+	margin-top: @size-rem-12px;
+	font-size: 13px;
+	font-size: @size-rem-13px;
+	line-height: 1.846153846;
+	color: @entry-meta-color;
+}
+.comments-link ,
+.entry-meta {
+	a {
+		color: @entry-meta-color;
+		&:hover {
+			color: @entry-meta-hover-color;
+		}
+	}
+}
+.entry-header .entry-meta,
+.entry-header .title-comment-meta {
+	color: @entry-meta-color;
+	margin-top: 12px;
+	margin-top: @size-rem-12px;
+	font-size: 13px;
+	font-size: @size-rem-13px;
+	line-height: 1.846153846;
+}
+/* Tip26b - uncomment next CSS rule to Print HTML bellow post title with meta information (date/time and author) for the index/archive views in MOBILE view */
+/*
+.home .entry-header .entry-meta,
+.archive .entry-header .entry-meta {
+	display: block;
+}
+*/
+footer.entry-meta {
+	color: @entry-meta-color;
+	margin-top: 24px;
+	margin-top: @size-rem-24px;
+	font-size: 13px;
+	font-size: @size-rem-13px;
+	line-height: 1.846153846;
+}
+/* Tip30 - Uncomment next CSS block to hide entry meta section (with author, categories, tags) in the Index page and archive listing. */
+/*
+.home footer.entry-meta,
+.archive footer.entry-meta {
+	display: none;
+}
+.site-content article {
+	padding-bottom: 12px;
+	padding-bottom: 0.857142857rem;
+}
+*/
+.meta-separator {
+	color: @icon-color;
+	font-size: 13px;
+	font-size: @size-rem-13px;
+}
+article.sticky .featured-post {
+	font-size: 27px;
+	font-size: @size-rem-27px;
+	line-height: 1.2;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: @archive-title-color;
+}
+.entry-content,
+.comment-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: @headers-color;
+		font-weight: normal;
+	}
+	h1 {
+		font-size: @entry-h1-font-size;
+		font-size: @entry-h1-font-size-rem;
+		font-weight: @entry-h1-font-weight;
+		line-height: @entry-h1-line-height;
+	}
+	h2 {
+		font-size: @entry-h2-font-size;
+		font-size: @entry-h2-font-size-rem;
+		font-weight: @entry-h2-font-weight;
+		line-height: @entry-h2-line-height;
+	}
+	h3 {
+		font-size: @entry-h3-font-size;
+		font-size: @entry-h3-font-size-rem;
+		font-weight: @entry-h3-font-weight;
+		line-height: @entry-h3-line-height;
+	}
+	h4 {
+		font-size: @entry-h4-font-size;
+		font-size: @entry-h4-font-size-rem;
+		font-weight: @entry-h4-font-weight;
+		line-height: @entry-h4-line-height;
+	}
+	h5 {
+		font-size: @entry-h5-font-size;
+		font-size: @entry-h5-font-size-rem;
+		font-weight: @entry-h5-font-weight;
+		line-height: @entry-h5-line-height;
+	}
+	h6 {
+		font-size: @entry-h6-font-size;
+		font-size: @entry-h6-font-size-rem;
+		font-weight: @entry-h6-font-weight;
+		line-height: @entry-h6-line-height;
+	}
+}
+.mu_register h2 {
+	font-size: 23px;
+	font-size: @size-rem-23px;
+	line-height: 1.5;
+	color: #757575;
+	font-weight: normal;
+}
+.entry-meta h3 {
+	color: @headers-color;
+	margin: 24px 0;
+	margin:@size-rem-24px 0;
+	font-size: 18px;
+	font-size: @size-rem-18px;
+	line-height: 1.6;
+}
+.entry-content,
+.comment-content {
+	a {
+		&:visited {
+			color: @body-link-visited-color;
+		}
+		&:hover {
+			color: @body-link-hover-color;
+		}
+	}
+}
+.entry-content blockquote {
+		margin-bottom: 24px;
+		margin-bottom: @size-rem-24px;
+		padding: 24px 0 24px 48px;
+		padding: @size-rem-24px 0 @size-rem-24px @size-rem-48px;
+		color: @blockquote-color;
+		font-size: 18px;
+		font-size: @size-rem-18px;
+		font-style: normal;
+}
+
+/* Use larger font for posts and pages */
+.single .entry-content,
+.page .entry-content {
+	font-size: @entry-single-font-size;
+	font-size: @entry-single-font-size-rem;
+}
+/* Use regular (smaller) font size for pages that use Front Page Template */
+.template-front-page .page .entry-content {
+	font-size: @body-font-size;
+	font-size: @body-font-size-rem;
+}
+.single .entry-content p,
+.single .entry-summary p,
+.single .comment-content p,
+.single .mu_register p,
+.page .entry-content p,
+.page .comment-content p {
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	line-height: @entry-single-p-line-height;
+}
+.entry-content p,
+.entry-summary p,
+.comment-content p,
+.mu_register p {
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	line-height: @entry-p-line-height;
+}
+/* Tip33 - Enable hyphenation of text for article */
+/*
+.site-content article {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+*/
+/* Tip21 - Icon webfont support implementation and examples */
+.entry-content blockquote p:first-child:before {
+	color: @icon-color;
+	padding-right: 10px;
+	padding-right: @size-rem-10px;
+	margin-left: -48px;
+	margin-left: -@size-rem-48px;
+	content: "\e65b"; /* el-icon-quotes */
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: normal 36px/1 'Elusive-Icons';
+	vertical-align: bottom;
+}
+/* Tip25 - Mark the links that will open in a new window with special icon, usually these are the links to external resources */
+.entry-content a[target=_blank] {
+	/* display: inline-block; */
+	padding-right: 16px;
+	padding-right: @size-rem-16px;
+	background: transparent center right no-repeat;
+	background-image: url('images/icon-external-link.png');
+}
+/* Tip25b - Disable special icons, that marks the links that will open in a new window */
+/*
+.entry-content a[target=_blank] {
+	padding-right: 0;
+	background: none;
+}
+*/
+.entry-content {
+	text-align: justify;
+}
+.archive .site-content article,
+.category .site-content article,
+.single .site-content article,
+.blog .site-content article,
+.search-results .site-content article {
+  background: @article-background-color;
+  /* Old browsers */
+
+  /* IE10 Consumer Preview */
+  background-image: -ms-radial-gradient(center bottom, circle closest-corner, @article-gradient-color-1 0%, @article-gradient-color-2 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-radial-gradient(center bottom, circle closest-corner, @article-gradient-color-1 0%, @article-gradient-color-2 100%);
+  /* Opera */
+  background-image: -o-radial-gradient(center bottom, circle closest-corner, @article-gradient-color-1 0%, @article-gradient-color-2 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 487, color-stop(0, @article-gradient-color-1), color-stop(1, @article-gradient-color-2));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-radial-gradient(center bottom, circle closest-corner, @article-gradient-color-1 0%, @article-gradient-color-2 100%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: radial-gradient(circle closest-corner at center bottom, @article-gradient-color-1 0%, @article-gradient-color-2 100%);
+}
+
+
+/* 5.0 Archives
+-------------------------------------------------------------- */
+
+.archive-header {
+	a,
+	a:link,
+	a:visited {
+		color: @body-link-color;
+		text-decoration: underline;
+	}
+	a:hover,
+	a:active {
+		color: @body-link-hover-color;
+		text-decoration: underline;
+	}
+}
+.archive-meta {
+	color: @entry-meta-color;
+	font-size: 12px;
+	font-size: @size-rem-12px;
+	line-height: 2;
+	margin-top: 22px;
+	margin-top: @size-rem-22px;
+}
+
+
+/* 6.0 Attachment views
+-------------------------------------------------------------- */
+
+/* 6.1 Single audio/video attachment view */
+
+/* 6.2 Single image attachment view */
+
+
+
+/* 7.0 Post formats
+-------------------------------------------------------------- */
+
+/* 7.1 Aside post format */
+
+
+/* 7.2 Image posts */
+
+
+/* 7.3 Link posts */
+
+
+/* 7.4 Quote posts */
+
+
+/* 7.5 Status posts */
+
+
+
+/* 8.0 Comments
+-------------------------------------------------------------- */
+
+.comments-title {
+	margin-bottom: 48px;
+	margin-bottom: @size-rem-48px;
+	font-size: 16px;
+	font-size: @size-rem-16px;
+	line-height: 1.5;
+	font-weight: bold;
+}
+.comments-area article header {
+	a {
+		text-decoration: none;
+		color: @body-link-color;
+	}
+	a:hover {
+		color: @body-link-hover-color;
+	}
+}
+a.comment-reply-link,
+a.comment-edit-link {
+	font-size: 13px;
+	font-size:@size-rem-13px;
+	line-height: 1.846153846;
+	color: @body-link-color;
+	&:hover {
+		color: @body-link-hover-color;
+	}
+}
+
+/* 8.1 Comment form */
+/* Hide the html tags for comments */
+#respond form p.form-allowed-tags {
+	display: none;
+}
+
+/* 8.2 Custom styles for Schema.org microdata format support implementation */
+p.comment-author-name, 
+.widget-area .widget p.comment-author-name { 
+	display: inline-block; 
+	margin-bottom: 0;
+}
+
+
+/* 9.0 Page templates
+-------------------------------------------------------------- */
+
+/* 9.1 Front page template */
+
+
+/* 9.2 Links (blogroll) template */
+
+
+
+/* 10.0 Widgets
+-------------------------------------------------------------- */
+
+
+
+/* 11.0 Plugins
+----------------------------------------------- */
+
+
+
+/* 12.0 Media queries
+-------------------------------------------------------------- */
+
+/* 12.1 Minimum width of 770 pixels */
+@media screen and (min-width: 770px) { // If you change this value, you should also change this min-width in the parent theme's style.css
+	.site-header {
+		text-align: center;
+		h1 {
+			font-weight: normal;
+			font-size: 26px;
+			font-size: @size-rem-26px;
+			line-height: 1.846153846;
+			margin-bottom: 0;
+		}
+		h1,
+		h2 {
+			text-align: left;
+			a {
+				color: @site-title-color;
+			}
+			a:hover {
+				color: @site-title-hover-color;
+			}
+		}
+	}
+	.main-navigation {
+		ul.nav-menu,
+		div.nav-menu > ul {
+			border-top: 1px solid #bbb;
+			border-bottom: 1px solid #bbb;
+		}
+		ul.nav-menu  {
+			text-align: left;
+			ul.sub-menu {
+				text-align: left;
+			}
+		}
+	}
+	/* Show top menu search in child themes for the full menu */
+	.menu-item.menu-item-search {
+		display: inline;
+	}
+	.home .entry-header .entry-meta,
+	.archive .entry-header .entry-meta {
+		display: none;
+	}
+	/* Tip26b - uncomment next CSS rule to Print HTML bellow post title with meta information (date/time and author) for the index/archive views in NORMAL view */
+	/*
+	.home .entry-header .entry-meta,
+	.archive .entry-header .entry-meta {
+		display: block;
+	}
+	*/
+	/* Tip62 - Add side borders for the middle footer widget - to better separate widgets visually. Uncomment next section: */
+	/* #footer-widgets.three #footer-widget-middle {
+    border: 1px solid #ededed;
+    border-width: 0 1px;
+	} */
+}
+
+/* 12.2 Minimum width of 960 pixels */
+@media screen and (min-width: 960px) {
+	body {
+		background-color: @body-background-color;
+		.custom-background-empty {
+			background-color: #fff;
+		}
+		.site {
+			padding: 12px 40px 0 40px;
+			padding: @size-rem-12px @size-rem-40px 0 @size-rem-40px;
+			margin-top: 24px;
+			margin-top: @size-rem-24px;
+			margin-bottom: 48px;
+			margin-bottom: @size-rem-48px;
+			box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+		}
+	}
+	.entry-header .entry-title,
+	.entry-header .entry-title h1 {
+		font-size: @entry-title-font-size;
+		font-size: @entry-title-font-size-rem;
+		font-weight: @entry-title-font-weight;
+		line-height: @entry-title-line-height;
+		color: @entry-title-color;
+		/* Tip32 - Add shadow to post/page title. Usage: text-shadow: horizontal-offset vertical-offset blur color; last digit of rgba sets opacity */
+		/* text-shadow: 1px 1px 3px rgba(0,0,0,0.2); */
+	}
+}
+
+/* 12.3 Minimum width of 1250 pixels */
+
+/* 12.4 Retina-specific styles. This style cannot be processed by LESS */
+
+
+
+/* 13.0 Print
+----------------------------------------------- */
+
+
+
+/* 13.1 Comments */
+
+
+
+/* 14.0 Other styles
+-------------------------------------------------------------- */
+
+/* 14.1 Tip23 - Properly resize videos, inserted with oembed. Goes together with tinyforge_css_oembed_filter function in functions.php */
+
+
+/* 14.2 Elusive-icons webfont */
+/* Tip21 - Icon webfont support implementation and examples */
+/* All icon webfont related styles (except blockquote - search for Tip21) are in this section so it would be easy to change them in case of migration to another icon webfont */
+.icon-webfont {
+	display: inline-block;
+	width: 16px;
+	width: @size-rem-16px;
+	height: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
+	font-size: @size-rem-16px;
+	line-height: 1;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: middle;
+}
+a:hover .icon-webfont,
+a:active .icon-webfont,
+a:hover.icon-webfont,
+a:active.icon-webfont {
+	text-decoration: none!important;
+}
+/* Style social icons in the sidebar */
+.widget-area .widget {
+	.icon-webfont {
+		width: 24px;
+		width: @size-rem-24px;
+		font-size: 24px;
+		font-size: @size-rem-24px;
+		height: 24px;
+		margin-right: 5px;
+		margin-right: @size-rem-5px;
+	}
+	a:link.icon-webfont,
+	a:link .icon-webfont,
+	a:visited.icon-webfont,
+	a:visited .icon-webfont {
+		color: @widget-icon-color;
+	}
+	a:hover.icon-webfont,
+	a:hover .icon-webfont,
+	a:active.icon-webfont,
+	a:active .icon-webfont {
+		color: @widget-title-color;
+	}
+}
+
+/* Tip05 - Mark main navigation menu items, containing children with special css class */
+/* Main navigation menu items with drop-down children will be marked by a distinct icon (caret down) via style.css */
+/* http://stackoverflow.com/questions/8448978/wordpress-how-do-i-know-if-a-menu-item-has-children */
+ul li.dropdown > a:after {
+	content: "\e6fe"; /* el-icon-chevron-down */
+	padding: 0 0 2px 5px;
+	padding: 0 0 @size-rem-2px @size-rem-5px;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: normal 9px/1 'Elusive-Icons';
+	vertical-align: middle;
+}
+header h1 .el-icon-calendar,
+header h1 .el-icon-folder-open,
+header h1 .el-icon-lock,
+header h1 .el-icon-search,
+header h1 .el-icon-tags,
+header h1 .el-icon-user,
+.featured-post .el-icon-idea {
+	width: 25px;
+	width: @size-rem-25px;
+	height: 25px;
+	font-size: 25px;
+	font-size: @size-rem-25px;
+	line-height: 1;
+	vertical-align: middle;
+}
+ul {
+	&.list-icon-ok,
+	&.list-icon-file,
+	&.list-icon-hand-right {
+		list-style-type: none;
+		li {
+			padding-bottom: 10px;
+			padding-bottom: @size-rem-10px;
+			text-indent: -16px;
+			&:before {
+				color: @icon-color;
+				padding-right: 10px;
+				padding-right: @size-rem-10px;
+				display: inline-block;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
+	}
+}
+ul.list-icon-ok li:before {
+	color: @icon-color;
+	content: "\e67a"; /* el-icon-ok */
+	font: normal 20px/1 'Elusive-Icons';
+	vertical-align: text-bottom;
+}
+ul.list-icon-file li:before {
+	color: @icon-color;
+	content: "\e6d4"; /* el-icon-file */
+	font: normal 20px/1 'Elusive-Icons';
+	vertical-align: text-bottom;
+}
+ul.list-icon-hand-right li:before {
+	color: @icon-color;
+	content: "\e6ab"; /* el-icon-hand-right */
+	font: normal 20px/1 'Elusive-Icons';
+	vertical-align: bottom;
+}
+/* Remaining css for webfont icons is plugged-in via functions.php */
+
+
+/* 14.3 Other styles */

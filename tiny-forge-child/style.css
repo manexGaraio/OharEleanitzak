@@ -1,0 +1,539 @@
+/*
+Theme Name: Tiny Forge Child
+Theme URI: http://mtomas.com/1/tiny-forge-free-mobile-first-wordpress-theme
+Author: Tomas Mackevicius
+Author URI: http://mtomas.com
+Description: Tiny Forge Child Example theme encompass all the best features of the default WordPress themes in one place, plus more usability and code improvements! It features elegant mobile-first HTML5 ready structure of Twenty Twelve, custom per-post headers and three footer widgets from Twenty Eleven (plus forth footer widget to insert your copyright information), icon webfont support from Elusive-Icons and Schema.org microdata format support. It's all there, you have everything in one neat package. Also you can upload your custom Header Logo to display it next to Site Title and Description. Tiny Forge and its child themes can be used as a learning tool or your own little web development "framework". With its unique "Coding Tips system" Tiny Forge helps to understand how to extend parent themes and build your own child themes, hacking them the way you want it. You get the best coding examples from default WordPress themes and the best hacks from the child theme. Please read readme.txt for a quick start guide. For more information please see: http://mtomas.com/389/tiny-forge-framework-child-themes-comprehensive-guide
+Template: tiny-forge
+Version: 1.5.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: tinyforgechild
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Notes
+--------------------------------------------------------------
+
+Sizes in rem units for reference:
+ 
+ 1px = 0.071428571rem
+ 2px = 0.142857143rem
+ 3px = 0.214285714rem
+ 4px = 0.285714286rem
+ 5px = 0.357142857rem
+ 6px = 0.428571429rem
+ 7px = 0.5rem
+ 8px = 0.571428571rem
+ 9px = 0.642857143rem
+10px = 0.714285714rem
+12px = 0.857142857rem
+13px = 0.928571429rem
+14px = 1rem
+15px = 1.071428571rem
+16px = 1.142857143rem
+18px = 1.285714286rem
+22px = 1.571428571rem
+23px = 1.642857143rem
+24px = 1.714285714rem
+25px = 1.785714286rem
+26px = 1.857142857rem
+27px = 1.928571429rem
+28px = 2rem
+30px = 2.142857143rem
+32px = 2.285714286rem
+34px = 2.428571429rem
+36px = 2.571428571rem
+38px = 2.714285714rem
+40px = 2.857142857rem
+44px = 3.142857143rem
+48px = 3.428571429rem
+*/
+
+
+/* Table of Contents:
+ *
+ *  1.0 - Reset
+ *    1.1 - Clearing floats
+ *  2.0 - Repeatable Patterns
+ *    2.1 - Small headers
+ *    2.2 - Shared Post Format styling
+ *    2.3 - Form fields, general styles first
+ *    2.4 - Reset non-text input types
+ *    2.5 - Buttons
+ *    2.6 - Responsive images
+ *    2.7 - Images
+ *    2.8 - Navigation
+ *    2.9 - Author profiles
+ *    2.10 - Alerts
+ *  3.0 - Site Structure
+ *    3.1 - Body, links, basics
+ *    3.2 - Assistive text
+ *    3.3 - Page structure
+ *    3.4 - Header
+ *      3.4.1 - Site Header
+ *      3.4.2 - Navigation
+ *      3.4.3 - Banner
+ *    3.5 - Sidebar
+ *    3.6 - Footer
+ *  4.0 - Main content and comment content
+ *  5.0 - Archives
+ *  6.0 - Attachment views
+ *    6.1 - Single audio/video attachment view
+ *    6.2 - Single image attachment view
+ *  7.0 - Post formats
+ *    7.1 - Aside post format
+ *    7.2 - Image posts
+ *    7.3 - Link posts
+ *    7.4 - Quote posts
+ *    7.5 - Status posts
+ *  8.0 - Comments
+ *    8.1 - Comment form
+ *    8.2 - Custom styles for Schema.org microdata format support implementation
+ *  9.0 - Page templates
+ *    9.1 - Front page template
+ *    9.2 - Links (blogroll) template
+ * 10.0 - Widgets
+ * 11.0 - Plugins
+ * 12.0 - Media queries
+ *   12.1 - Minimum width of 770 pixels
+ *   12.2 - Minimum width of 960 pixels
+ *   12.3 - Minimum width of 1250 pixels
+ *   12.4 - Retina-specific styles. This style cannot be processed by LESS
+ * 13.0 - Print
+ *   13.1 - Comments
+ * 14.0 - Other styles
+ *   14.1 - Tip23 - Properly resize videos, inserted with oembed
+ *   14.2 - Elusive-icons webfont
+ *   14.3 - Other styles
+ * ----------------------------------------------------------------------------
+ */
+
+/* There must be no other CSS rules above the @import rule. @import adds +2 seconds of load time per CSS file, so I'm linking that file via functions.php instead. */
+
+
+/* 1.0 Reset
+-------------------------------------------------------------- */
+
+/* 1.1 Clearing floats */
+
+
+
+/* 2.0 Repeatable patterns
+-------------------------------------------------------------- */
+
+/* 2.1 Small headers */
+
+
+/* 2.2 Shared Post Format styling */
+
+
+/* 2.3 Form fields, general styles first */
+
+
+/* 2.4 Reset non-text input types */
+
+
+/* 2.5 Buttons */
+/* Make button text bold */
+.btn-custom,
+.btn-custom-red,
+.btn-custom-green,
+.btn-custom-black {
+	font-weight: bold;
+}
+
+/* 2.6 Responsive images */
+
+
+/* 2.7 Images */
+
+/* Tip06 - Custom headers for posts and pages. Uncomment following CSS rules to disable border and shadow on main header: */
+/*
+img.header-image,
+.site-header img.wp-post-image {
+	border-radius: 0;
+	box-shadow: none;
+}
+*/
+
+/* Tip12 - to disable header image for the Front Page Template to have classic Twenty Twelve front page look, uncomment next 4 lines: */
+/*
+.template-front-page img.header-image,
+.template-front-page .site-header img.wp-post-image {
+	display: none;
+}
+*/
+
+/* 2.8 Navigation */
+/*  Tip27 - Uncomment next code line to disable previous article - next article navigation below the content of a post */
+/* 
+.nav-single {
+	display: none;
+}
+*/
+
+/* 2.9 Author profiles */
+
+
+/* 2.10 Alerts */
+/* Twitter Bootstrap style alerts. Usage: http://getbootstrap.com/components/#alerts */
+
+
+
+/* 3.0 Site structure
+-------------------------------------------------------------- */
+
+/* 3.1 Body, links, basics */
+
+
+/* 3.2 Assistive text */
+
+
+/* 3.3 Page structure */
+
+
+/* 3.4 Header */
+
+/* 3.4.1 Site Header */
+
+
+/* 3.4.2 Navigation Menu */
+/* Small (mobile) menu */
+.site-header .menu-toggle {
+	background: #3a3a3a;
+	color: white;
+	font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	padding: 10px 22px;
+	padding: 0.714285714rem 1.571428571rem;
+	margin: 24px 0 0 0;
+	margin: 1.714285714rem 0 0 0;
+}
+.site-header .menu-toggle:hover {
+	background: #474747;
+}
+.site-header .menu-toggle:before {
+	content: '\2261';
+	font-size: 14px;
+	margin-right: 10px;
+	margin-right: 0.714285714rem;
+}
+.main-navigation.toggled .menu-toggle {
+	background: #474747;
+}
+.main-navigation.toggled a {
+	color: white;
+	padding: 10px 40px;
+	padding: 0.714285714rem 2.857142857rem;
+	text-decoration: none;
+}
+.main-navigation.toggled li a {
+	background: #3a3a3a;
+}
+.main-navigation.toggled li a:hover {
+	background: #474747;
+}
+.main-navigation.toggled ul > .current_page_item > a,
+.main-navigation.toggled ul > .current-menu-item > a {
+	background: #117bb8;
+}
+/* Tip10 - Add Twenty Thirteen search form to WordPress nav menu */
+.menu-item.menu-item-search {
+	float: right;
+	margin: 4px 0 0 0;
+	margin: 0.285714286rem 0 0 0;
+}
+.site-header input[type="search"] {
+	-webkit-appearance: textfield;
+	padding-right: 2px; /* Don't cut off the webkit search cancel button */
+	padding-right: 0.142857143rem; /* Don't cut off the webkit search cancel button */
+	width: 270px;
+	width: 19.285714286rem;
+}
+.site-header input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.site-header .searchform [type="search"],
+.site-header .searchform [type="text"] {
+	background-color: transparent;
+	background-image: url(images/icon-search.png);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	border: none;
+	cursor: pointer;
+	height: 28px;
+	margin: 3px 0;
+	margin: 0.214285714rem 0;
+	padding: 0 0 0 34px;
+	padding: 0 0 0 2.428571429rem;
+	position: relative;
+	-webkit-transition: width 400ms ease, background 400ms ease;
+	transition:         width 400ms ease, background 400ms ease;
+	width: 0;
+}
+.site-header .searchform [type="search"]:focus,
+.site-header .searchform [type="text"]:focus {
+	background-color: #f5f5f5;
+	border: 1px solid #bbb;
+	cursor: text;
+	outline: 0;
+	width: 230px;
+	width: 16.428571429rem;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+.site-header .searchform [type="submit"] {
+	display: none;
+}
+/* Hide top menu search in child themes for the mobile menu */
+.menu-item.menu-item-search {
+	display: none;
+}
+
+/* 3.4.3 Banner */
+
+
+/* 3.5 Sidebar */
+
+
+/* 3.6 Footer */
+
+
+
+/* 4.0 Main content and comment content
+-------------------------------------------------------------- */
+
+/* Tip26b - uncomment next CSS rule to Print HTML bellow post title with meta information (date/time and author) for the index/archive views in MOBILE view */
+/*
+.home .entry-header .entry-meta,
+.archive .entry-header .entry-meta {
+	display: block;
+}
+*/
+/* Tip30 - Uncomment next CSS block to hide entry meta section, located below the post (with author, categories, tags) in the Index page and archive listing. */
+/*
+.home footer.entry-meta,
+.archive footer.entry-meta {
+	display: none;
+}
+.site-content article {
+	padding-bottom: 12px;
+	padding-bottom: 0.857142857rem;
+}
+*/
+/* Tip25b - Disable special icons, that marks the links that will open in a new window */
+/*
+.entry-content a[target=_blank] {
+	padding-right: 0;
+	background: none;
+}
+*/
+/* Tip33 - Enable hyphenation of text for article */
+/*
+.site-content article {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+*/
+.meta-separator {
+	color: #8DC919;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+}
+
+
+
+/* 5.0 Archives
+-------------------------------------------------------------- */
+
+
+
+/* 6.0 Attachment views
+-------------------------------------------------------------- */
+
+/* 6.1 Single audio/video attachment view */
+
+/* 6.2 Single image attachment view */
+
+
+
+/* 7.0 Post formats
+-------------------------------------------------------------- */
+
+/* 7.1 Aside post format */
+
+
+/* 7.2 Image posts */
+
+
+/* 7.3 Link posts */
+
+
+/* 7.4 Quote posts */
+
+
+/* 7.5 Status posts */
+
+
+
+/* 8.0 Comments
+-------------------------------------------------------------- */
+
+/* 8.1 Comment form */
+
+
+/* 8.2 Custom styles for Schema.org microdata format support implementation */
+
+
+
+/* 9.0 Page templates
+-------------------------------------------------------------- */
+
+/* 9.1 Front page template */
+
+
+/* 9.2 Links (blogroll) template */
+
+
+
+/* 10.0 Widgets
+-------------------------------------------------------------- */
+
+
+
+/* 11.0 Plugins
+----------------------------------------------- */
+
+
+
+/* 12.0 Media queries
+-------------------------------------------------------------- */
+
+/* 12.1 Minimum width of 770 pixels */
+@media screen and (min-width: 770px) {
+	/* Show top menu search in child themes for the full menu */
+	.menu-item.menu-item-search {
+		display: inline;
+	}
+	.home .entry-header .entry-meta,
+	.archive .entry-header .entry-meta {
+		display: none;
+	}
+	/* Tip26b - uncomment next CSS rule to Print HTML bellow post title with meta information (date/time and author) for the index/archive views in NORMAL view */
+	/*
+	.home .entry-header .entry-meta,
+	.archive .entry-header .entry-meta {
+		display: block;
+	}
+	*/
+	/* Tip62 - Add side borders for the middle footer widget - to better separate widgets visually. Uncomment next section: */
+	/*
+	#footer-widgets.three #footer-widget-middle {
+    border: 1px solid #ededed;
+    border-width: 0 1px;
+	}
+	*/
+}
+
+/* 12.2 Minimum width of 960 pixels */
+@media screen and (min-width: 960px) {
+	.entry-header .entry-title,
+	.entry-header .entry-title h1 {
+		font-size: 36px;
+		font-size: 2.571428571rem;
+		font-weight: normal;
+		line-height: 1.2;
+		color: #333;
+		/* Tip32 - Add shadow to post/page title. Usage: text-shadow: horizontal-offset vertical-offset blur color; last digit of rgba sets opacity */
+		/* text-shadow: 1px 1px 3px rgba(0,0,0,0.2); */
+	}
+}
+
+/* 12.3 Minimum width of 1250 pixels */
+@media screen and (min-width: 1250px) {
+/* Here you can add specific styles for this screen widh */
+}
+
+/* 12.4 Retina-specific styles. This style cannot be processed by LESS */
+@media print,
+	(-o-min-device-pixel-ratio: 5/4),
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 120dpi) {
+	
+	/* Tip10 - Add Twenty Thirteen search form to WordPress nav menu - http://diythemes.com/thesis/rtfm/add-search-form-wp-wordpress-nav-menus/ */
+	.site-header .searchform [type="search"],
+	.site-header .searchform [type="text"] {
+		background-image: url(images/icon-search-2x.png);
+	}
+}
+
+
+/* 13.0 Print
+----------------------------------------------- */
+@media print {
+/* Here you can add specific styles for the printing */
+}
+
+/* 13.1 Comments */
+
+
+/* 14.0 Other styles
+-------------------------------------------------------------- */
+
+/* 14.1 Tip23 - Properly resize videos, inserted with oembed. Goes together with tinyforge_css_oembed_filter function in functions.php */
+
+
+/* 14.2 Elusive-icons webfont */
+
+/* Style social icons in the sidebar */
+
+/* Remaining css for webfont icons is plugged-in via functions.php */
+
+/* 14.3 Other styles */
+
+/*
+* Nik gehitutako Kodea
+*/
+
+
+/* 
+* Arau honekin artikuluen azpiko meta informazioa ezkutatzen da
+*/
+.entry-meta
+{
+	display:none;
+}
+
+
+
+/*
+* Kode honen bidez oinean agertzen ziren bi estekak kentzen dira(Site admin eta log out)
+*#site-admin-link
+*{
+*	display:none;
+*}
+*
+*/
+
+#site-generator {
+	width: 100%;
+	max-width: 2000px;
+
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+   .qtrans_language_chooser { list-style-type:none;  padding-top:3px; float:right; padding-bottom:3px; }
+    
+    .qtrans_language_chooser li { float:left;margin-right:10px }
+.qtrans_flag { border:1px solid #b6b6b6 }#qtrans_select_mqtranslate-chooser {			float: right;			margin-bottom: 5px;			margin-right: 5px;		}
+
