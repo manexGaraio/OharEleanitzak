@@ -552,16 +552,12 @@ public class KameraJarduera extends Activity {
 						Boolean berbideratzeaAutomatikoki = ezarpenZerrenda
 								.getBoolean(keyEzarpenak, false);
 
-						// kameraAskatu();
-						
-						//previewing = false;
 
 						// Bere balioa true bada, ez da URL-aren
 						// helbideratzearen
 						// konfirmaziorik egin beharko
 						if (berbideratzeaAutomatikoki) {
 
-							// previewing = false;
 							mCamera.setPreviewCallback(null);
 							mCamera.stopPreview();
 
@@ -570,9 +566,14 @@ public class KameraJarduera extends Activity {
 							// kodea gordetzeko NegozioLogika klaseari egin
 							// beharrako deia
 							negLog.kodeaGehitu(testua);
-							helbideaIreki(testua);
+							// Saiakera bat sortu,
+							// arakatzaileari
+							// deitu eta QR kodeak zekarren
+							// url-a
+							// atzitu ahal izateko
+							Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testua));
+							startActivity(intent);
 							kameraAskatu();
-							// previewing = true;
 						} else {
 							// Abisu bat sortzeko kodea. Hemen,
 							// erabiltzaileari
@@ -590,7 +591,6 @@ public class KameraJarduera extends Activity {
 												DialogInterface dialog,
 												int which) {
 
-											// previewing = false;
 											mCamera.setPreviewCallback(null);
 											mCamera.stopPreview();
 
@@ -600,9 +600,14 @@ public class KameraJarduera extends Activity {
 											// NegozioLogika
 											// klaseari egin beharrako deia
 											negLog.kodeaGehitu(testua);
-											helbideaIreki(testua);
+											// Saiakera bat sortu,
+											// arakatzaileari
+											// deitu eta QR kodeak zekarren
+											// url-a
+											// atzitu ahal izateko
+											Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testua));
+											startActivity(intent);
 											kameraAskatu();
-											// previewing = true;
 										}
 									});
 
@@ -623,9 +628,6 @@ public class KameraJarduera extends Activity {
 											scanText.setText(R.string.eskaneatzen);
 
 											previewing = true;
-
-											// kameraAskatu();
-											// kameraBirhasieratu();
 										}
 									});
 							testuaErakutsi.create();
@@ -709,46 +711,6 @@ public class KameraJarduera extends Activity {
 		startActivity(i);
 	}
 
-	/**
-	 * IrakurketaHistoria klasean metodo honen kopia bat dago
-	 * 
-	 * @param testua
-	 */
-	public void helbideaIreki(String testua) {
-		if (-1 == testua.indexOf("oharrak.albaola.com/")) { // URL helbidea
-															// gurea ez bada,
-															// arakatzailearekin
-															// ireki
-			// Saiakera bat sortu,
-			// arakatzaileari
-			// deitu eta QR kodeak zekarren
-			// url-a
-			// atzitu ahal izateko
-			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testua));
-			startActivity(intent);
-		} else { // Gurea bada, WebView-a hasieratzen duen NireWebArakatzailea
-					// eragiketari deitu, aldagai gisa url-a emanda
-			Intent intent = new Intent(testuingurua, NireWebArakatzailea.class);
-			intent.putExtra("url", testua);
-			startActivity(intent);
-		}
-	}
-
-	/*
-	 * public static void erroreMezuaErakutsi(int testuId, String errorea) {
-	 * AlertDialog.Builder testuaErakutsi = new AlertDialog.Builder(
-	 * testuingurua); String oharra =
-	 * testuingurua.getResources().getString(testuId); testuaErakutsi
-	 * .setPositiveButton(R.string.urlOnartu, new
-	 * DialogInterface.OnClickListener() {
-	 * 
-	 * @Override public void onClick(DialogInterface dialog, int which) {
-	 * 
-	 * // Abisua itxi, kamara askatu eta // onResume metodoari deitu (berriro //
-	 * kamara martxan jartzeko) dialog.cancel(); }
-	 * }).create().setTitle(R.string.adi); testuaErakutsi.setMessage(oharra +
-	 * errorea ); Log.e("Albaolapp", oharra + errorea); testuaErakutsi.show(); }
-	 */
 
 	/**
 	 * Fokatze automatiko jarraia egiteko
