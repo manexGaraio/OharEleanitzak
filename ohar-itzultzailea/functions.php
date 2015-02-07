@@ -108,8 +108,7 @@
 		if ( '' === $hizkuntza ) {
 			return 7;
 		}
-		// VoiceRss zerbitzuaren APIa erabiltzeko behar den gakoa
-		// $gakoa = '4f58c72aac254d0f810d481b927ab45b';
+		
 		$url = 'https://api.voicerss.org';
 		
 		// cURL hasieratu
