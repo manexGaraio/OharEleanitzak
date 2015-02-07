@@ -613,7 +613,7 @@
 	
 	/*
 	*	Funtzio honek bidalketa/orrialdearen testu eta izenburuak itzultzen ditu, modu automatiko batean, interfazerik gabe. Jatorri hizkuntza gisa,
-	*	ingelesa hartzen da eta hizkuntz guztietara itzuliko du euskara, gaztelania eta frantsesera izan ezik, hizkuntz horietan gure testu propioak
+	*	ingelesa hartzen da eta hizkuntz guztietara itzuliko du euskara eta gaztelaniara izan ezik, hizkuntz horietan gure testu propioak
 	*	izango ditugu eta
 	*/
 	echo "function itzulpenAutomatikoakEgin( idZenbakia ) {
@@ -648,8 +648,8 @@
 		
 		// Iterazio hauen bidez itzuli behar diren hizkuntzak zehaztu
 		foreach ( $q_config['enabled_languages'] as $language ) { //Webgunea ezarrita dagoen hizkuntz bakoitzeko
-			echo "if ( 'es' !== '" . $language . "' && 'en' !== '" . $language . "' && 'eu' !== '" . $language . "' && 'fr' !== '" . $language . "' ) {
-				// Master hizkuntza ( eu, en, es, fr) bat ez bada, bektorean gorde
+			echo "if ( 'es' !== '" . $language . "' && 'en' !== '" . $language . "' && 'eu' !== '" . $language . "' ) {
+				// Master hizkuntza ( eu, en, es) bat ez bada, bektorean gorde
 				hizkuntzak.push( '" . $language . "' );
 			}";
 		}	
