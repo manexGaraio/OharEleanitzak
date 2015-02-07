@@ -88,7 +88,7 @@
 	
 	
 	/*
-	*	2.1: Funtzio honek VoiceRss zerbitzuari deia egiten dio, testuaren audioa sortzeko
+	*	2.1: Funtzio honek VoiceRss zerbitzuari deia egiten dio, testuaren audioa sortzeko. Audioa OGG eta MP3 formatuetan sortuko da, nabigatzaile guztietan entzun ahalko dela ziurtatzeko
 	*		Itzultzen dituen kodeak:
 	*			0: ondo joan da
 	*			1: Testua hutsik zegoen
