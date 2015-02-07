@@ -466,8 +466,6 @@ public class KameraJarduera extends Activity {
 									dialog.cancel();
 									previewing = true;
 									scanText.setText(R.string.eskaneatzen);
-									// kameraAskatu();
-									// kameraBirhasieratu();
 								}
 							});
 
@@ -519,18 +517,19 @@ public class KameraJarduera extends Activity {
 						 * beharko direnak.
 						 */
 
-						/*
-						 * Webgunearen helbidearen bukaeran kokatzeko. indexOf
-						 * eragiketa "ohareleanitzak.esy.es/" karaktere katearen
-						 * lehen posizioan kokatuko da. Azken posizioan
-						 * kokatzeko +22 egiten da. Karaktere katea topatu ez
-						 * badu -1 bat itzuliko du
-						 */
-						indizea = testua.indexOf("ohareleanitzak.esy.es/") + 22;
-						// -1+22=21 Hortaz, karaktere katea ez da topatu eta
+						// Gure webgunearen helbidea
+						String webgunea = "ohareleanitzak.esy.es/";
+					
+						// karaktere katea topatu ez bada,
 						// helbidea ez dagokio gure webguneari.
 						// Kasu honetan ez dugu ezer egin beharko oraingoz.
-						if (indizea != 21) {
+						if (testua.indexOf(webgunea) != -1) {
+							/*
+							 * Webgunearen helbidearen bukaeran kokatzeko. indexOf
+							 * eragiketa webgunea aldagaiak gordetzen duen karaktere katearen
+							 * lehen posizioan kokatuko da. 
+							 */
+							int indizea = testua.indexOf(webgunea) + webgunea.length();
 							// Url-a gure webguneari badagokio
 							// Lortu url-aren erroa(indizea aldagaiak adierazten
 							// duen posizioa baino lehenago dagoena)
