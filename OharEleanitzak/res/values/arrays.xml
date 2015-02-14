@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Bi bektoreek hutsik dagoen elementu bat dute, aplikazioa hasieratzean agertzen 
+    den hizkuntz hautatzaileko elementu bat hautatu ondoren zuzenean KameraJarduera 
+    jarduera ireki dezan, erabiltzaileak atzera joatearen botoiari eman beharrik gabe.-->
     <string-array name="hizkuntzArray">
+        <item></item>
         <item>Català</item>
         <item>Deutsch</item>
         <item>English</item>
@@ -12,6 +16,7 @@
         <item>Português</item>
     </string-array>
     <string-array name="hizkuntzArrayBalioak">
+        <item></item>
         <item>ca</item>
         <item>de</item>        
         <item>en</item>
