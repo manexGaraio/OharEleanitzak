@@ -38,9 +38,9 @@
 	
 	define( 'OI_PLUGIN_KOKAPENA', plugin_dir_path( __FILE__ ) );
 	
-	define( 'GT_GAKOA' , 'AIzaSyBRjjaCpyMQLIvvbrBAIbRKGFpfvGbzh4s' );
+	define( 'GT_GAKOA' , '' );
 	
-	define( 'VR_GAKOA', '4f58c72aac254d0f810d481b927ab45b' );
+	define( 'VR_GAKOA', '' );
 	
 	require_once ( OI_PLUGIN_KOKAPENA . 'functions.php' );
 	

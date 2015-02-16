@@ -473,8 +473,6 @@ public class KameraJarduera extends Activity {
 									dialog.cancel();
 									previewing = true;
 									scanText.setText(R.string.eskaneatzen);
-									// kameraAskatu();
-									// kameraBirhasieratu();
 								}
 							});
 
@@ -525,8 +523,14 @@ public class KameraJarduera extends Activity {
 						 * aplikazioaren hizkuntzaren arabera tratatuak izan
 						 * beharko direnak.
 						 */
+<<<<<<< HEAD
 						
 						
+=======
+
+						// Gure webgunearen helbidea
+						String webgunea = "ohareleanitzak.esy.es/";
+>>>>>>> origin/master
 					
 						// karaktere katea topatu ez bada,
 						// helbidea ez dagokio gure webguneari.

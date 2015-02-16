@@ -88,7 +88,7 @@
 	
 	
 	/*
-	*	2.1: Funtzio honek VoiceRss zerbitzuari deia egiten dio, testuaren audioa sortzeko
+	*	2.1: Funtzio honek VoiceRss zerbitzuari deia egiten dio, testuaren audioa sortzeko. Audioa OGG eta MP3 formatuetan sortuko da, nabigatzaile guztietan entzun ahalko dela ziurtatzeko
 	*		Itzultzen dituen kodeak:
 	*			0: ondo joan da
 	*			1: Testua hutsik zegoen
@@ -108,8 +108,7 @@
 		if ( '' === $hizkuntza ) {
 			return 7;
 		}
-		// VoiceRss zerbitzuaren APIa erabiltzeko behar den gakoa
-		// $gakoa = '4f58c72aac254d0f810d481b927ab45b';
+		
 		$url = 'https://api.voicerss.org';
 		
 		// cURL hasieratu
