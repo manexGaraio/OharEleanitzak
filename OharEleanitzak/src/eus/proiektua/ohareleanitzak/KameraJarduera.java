@@ -74,6 +74,13 @@ public class KameraJarduera extends Activity {
 
 	private boolean previewing = true;
 	private boolean hasieraketa = true;
+	
+	// Gure webgunearen helbidea
+	private final static String webgunea = "ohareleanitzak.esy.es/";
+	
+	public static String getWebgunea() {
+		return webgunea;
+	}
 
 	private String testua = "";
 
@@ -508,7 +515,7 @@ public class KameraJarduera extends Activity {
 									"hautatutakoHizkuntza", "en");
 						}
 
-						int indizea;
+						
 
 						/*
 						 * Irakurlea gai da web helbideak dituen edozein QR kode
@@ -518,19 +525,19 @@ public class KameraJarduera extends Activity {
 						 * aplikazioaren hizkuntzaren arabera tratatuak izan
 						 * beharko direnak.
 						 */
-
-						/*
-						 * Webgunearen helbidearen bukaeran kokatzeko. indexOf
-						 * eragiketa "ohareleanitzak.esy.es/" karaktere katearen
-						 * lehen posizioan kokatuko da. Azken posizioan
-						 * kokatzeko +22 egiten da. Karaktere katea topatu ez
-						 * badu -1 bat itzuliko du
-						 */
-						indizea = testua.indexOf("ohareleanitzak.esy.es/") + 22;
-						// -1+22=21 Hortaz, karaktere katea ez da topatu eta
+						
+						
+					
+						// karaktere katea topatu ez bada,
 						// helbidea ez dagokio gure webguneari.
 						// Kasu honetan ez dugu ezer egin beharko oraingoz.
-						if (indizea != 21) {
+						if (testua.indexOf(webgunea) != -1) {
+							/*
+							 * Webgunearen helbidearen bukaeran kokatzeko. indexOf
+							 * eragiketa webgunea aldagaiak gordetzen duen karaktere katearen
+							 * lehen posizioan kokatuko da. 
+							 */
+							int indizea = testua.indexOf(webgunea) + webgunea.length();
 							// Url-a gure webguneari badagokio
 							// Lortu url-aren erroa(indizea aldagaiak adierazten
 							// duen posizioa baino lehenago dagoena)
@@ -566,13 +573,7 @@ public class KameraJarduera extends Activity {
 							// kodea gordetzeko NegozioLogika klaseari egin
 							// beharrako deia
 							negLog.kodeaGehitu(testua);
-							// Saiakera bat sortu,
-							// arakatzaileari
-							// deitu eta QR kodeak zekarren
-							// url-a
-							// atzitu ahal izateko
-							Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testua));
-							startActivity(intent);
+							helbideaIreki(testua);
 							kameraAskatu();
 						} else {
 							// Abisu bat sortzeko kodea. Hemen,
@@ -600,13 +601,7 @@ public class KameraJarduera extends Activity {
 											// NegozioLogika
 											// klaseari egin beharrako deia
 											negLog.kodeaGehitu(testua);
-											// Saiakera bat sortu,
-											// arakatzaileari
-											// deitu eta QR kodeak zekarren
-											// url-a
-											// atzitu ahal izateko
-											Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testua));
-											startActivity(intent);
+											helbideaIreki(testua);
 											kameraAskatu();
 										}
 									});
@@ -709,6 +704,31 @@ public class KameraJarduera extends Activity {
 	public void laguntzaDeitu() {
 		Intent i = new Intent(this, LaguntzaOrokorra.class);
 		startActivity(i);
+	}
+	
+	/**
+	 * IrakurketaHistoria klasean metodo honen kopia bat dago
+	 * 
+	 * @param testua
+	 */
+	public void helbideaIreki(String testua) {
+		if (-1 == testua.indexOf(webgunea)) { // URL helbidea
+															// gurea ez bada,
+															// arakatzailearekin
+															// ireki
+			// Saiakera bat sortu,
+			// arakatzaileari
+			// deitu eta QR kodeak zekarren
+			// url-a
+			// atzitu ahal izateko
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testua));
+			startActivity(intent);
+		} else { // Gurea bada, WebView-a hasieratzen duen NireWebArakatzailea
+					// eragiketari deitu, aldagai gisa url-a emanda
+			Intent intent = new Intent(testuingurua, NireWebArakatzailea.class);
+			intent.putExtra("url", testua);
+			startActivity(intent);
+		}
 	}
 
 

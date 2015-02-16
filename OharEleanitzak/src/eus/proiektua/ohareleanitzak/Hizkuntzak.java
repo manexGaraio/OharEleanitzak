@@ -26,7 +26,12 @@ package eus.proiektua.ohareleanitzak;
 /**
  * Mugikorraren hizkuntza detektatzerakoan, enum motako objektu hauekin
  * konparatuko da, hautatutako hizkuntza zein den jakiteko. Hizkuntzaren kodea
- * bi letraz osatuta egongo da. Balio posibleak: eu, en, es, fr, ca eta cy
+ * bi letraz osatuta egongo da. Balio posibleak: ca, de, en, es, eu, fr, gl,it eta pt
+ * Hizkuntzak kendu edo gehitu nahi izatekotan enum-ak onartzen dituen testuak nahi duzun
+ * bezala jartzeaz gain, res/values/arrays.xml fitxategiko hizkuntz izen eta kodeak 
+ * eguneratu beharko dituzu eta HizkuntzHautatzailea klaseko onCreate eta onItemSelected
+ * funtzioetan dauden switch-ak eguneratu beharko dituzu, arrays.xml fitxategian jarrita
+ * dagoen ordena errespetatuz
  *
  */
 public enum Hizkuntzak {

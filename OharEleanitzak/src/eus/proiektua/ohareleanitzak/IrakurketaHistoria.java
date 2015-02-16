@@ -83,10 +83,7 @@ public class IrakurketaHistoria extends Activity{
             	String klikatua= moldagailua.getChild(goiburuIndizea,semeIndizea);
             	//Datu basean eguneratu azken atzipena
             	moldagailua.kodeaGehitu(klikatua);
-            	// helbideaIreki(klikatua);
-            	//Web arakatzailea ireki erabiltzaileak zapaldu duen kodea atzitzeko.
-            	Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(klikatua));
-            	startActivity(i);
+            	helbideaIreki(klikatua);
                 return true;
             }
         });
@@ -172,6 +169,31 @@ public class IrakurketaHistoria extends Activity{
 			break;
 		}
 		return true;
+	}
+	
+	/**
+	 * KameraJarduera klasean dagoen metodoaren kopia
+	 * @param testua
+	 */
+	public void helbideaIreki(String testua) {
+		if (-1 == testua
+				.indexOf(KameraJarduera.getWebgunea())) {
+			// Saiakera bat sortu,
+			// arakatzaileari
+			// deitu eta QR kodeak zekarren
+			// url-a
+			// atzitu ahal izateko
+			Intent intent = new Intent(
+					Intent.ACTION_VIEW, Uri
+							.parse(testua));
+			startActivity(intent);
+		} else {
+			Intent intent = new Intent(
+					this,
+					NireWebArakatzailea.class);
+			intent.putExtra("url", testua);
+			startActivity(intent);
+		}
 	}
 	
 	public void historiarenLaguntzariDeitu() {

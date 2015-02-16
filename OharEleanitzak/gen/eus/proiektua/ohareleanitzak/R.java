@@ -17,6 +17,10 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
+        /**  Bi bektoreek hutsik dagoen elementu bat dute, aplikazioa hasieratzean agertzen 
+    den hizkuntz hautatzaileko elementu bat hautatu ondoren zuzenean KameraJarduera 
+    jarduera ireki dezan, erabiltzaileak atzera joatearen botoiari eman beharrik gabe.
+         */
         public static final int hizkuntzArray=0x7f0d0000;
         public static final int hizkuntzArrayBalioak=0x7f0d0001;
     }

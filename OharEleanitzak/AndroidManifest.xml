@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="eus.proiektua.ohareleanitzak"
-    android:versionCode="3"
+    android:versionCode="5"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -38,6 +38,7 @@
         <activity android:name="HizkuntzHautatzailea" android:theme="@android:style/Theme.Dialog"></activity>
         <activity android:name="LaguntzaOrokorra"></activity>
         <activity android:name="LaguntzaAzpiatala"></activity>
+        <activity android:name="NireWebArakatzailea" android:configChanges="orientation|screenSize"></activity>
         <activity android:name="DialogSortzailea" android:theme="@android:style/Theme.Dialog"></activity>
     </application>
 </manifest>

@@ -26,6 +26,7 @@ package eus.proiektua.ohareleanitzak;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Klase honek erabiltzaileari aplikazioaren hizkuntza aukeratzeko aukera ematen
@@ -49,6 +51,11 @@ public class HizkuntzHautatzailea extends Activity implements
 	private Spinner hautatzailea;
 
 	private ArrayAdapter<CharSequence> moldagailua;
+	
+	/* Hautatzailea hasieratzen den lehen aldian onItemSelected exekutatuko da, ezer 
+	*	aukeratu ez den arren. Horri aurre egiteko balio du boolear honek
+	*/
+	private boolean lehenAldia = true;
 
 	/**
 	 * Funtzio honek jarduera sortzen den unean aplikazioak dauzkan hizkuntza
@@ -89,81 +96,9 @@ public class HizkuntzHautatzailea extends Activity implements
 		// Hautatzaileko elementu bat aukeratua denean exekutatuko den funtzioa
 		// definitu
 		hautatzailea.setOnItemSelectedListener(this);
-		// Ezarpenak kargatu
-		SharedPreferences ezarpenZerrenda = PreferenceManager
-				.getDefaultSharedPreferences(this);
-		try {
-			// Aplikazioan lehenetsita dagoen hizkuntza lortu(hasiera batean
-			// mugikorraren hizkuntza izaten da)
-			String mugikorrekoHizkuntza = Locale.getDefault().getLanguage();
-			String hizkuntza;
-			if (Hizkuntzak.badauka(mugikorrekoHizkuntza)) { // Mugikorreko
-															// hizkuntza
-															// aplikazioa
-															// eskuragarri
-															// dagoen hizkuntzen
-															// artean badago
-				// Erabiltzaileak hautatu duen hizkuntza lortu. Ezarpena hutsik
-				// balego, mugikorreko hizkuntza itzuliko du
-				hizkuntza = ezarpenZerrenda.getString("hautatutakoHizkuntza",
-						mugikorrekoHizkuntza);
-			} else {
-				// Aplikazioa mugikorreko hizkuntzan eskuragarri ez badago
-				// Erabiltzaileak hautatu duen hizkuntza lortu. Ezarpena hutsik
-				// balego, ingelera itzuliko du
-				hizkuntza = ezarpenZerrenda.getString("hautatutakoHizkuntza",
-						"en");
-			}
-			int indizea = -1;
-			switch (Hizkuntzak.valueOf(hizkuntza)) { // Hizkuntza bakoitzeko
-														// indize bat esleitu
-			case ca:
-				indizea = 0;
-				break;
-			case de:
-				indizea = 1;
-				break;
-			case en:
-				indizea = 2;
-				break;
-			case es:
-				indizea = 3;
-				break;
-			case eu:
-				indizea = 4;
-				break;
-			case fr:
-				indizea = 5;
-				break;
-			case gl:
-				indizea = 6;
-				break;
-			case it:
-				indizea = 7;
-				break;
-			case pt:
-				indizea = 8;
-				break;
-			}
-			if (indizea != -1) { // Indizea switch-ean aldatu bada, hizkuntza
-									// egokia da
-				// Hautatzailean aurrez aukeratutako hizkuntza gisa indize horri
-				// dagokion hizkuntza jarri
-				hautatzailea.setSelection(indizea);
-			} else { // Indizea switch-ean aldatu ez bada, hizkuntza ez da
-						// egokia
-				// Hautatzailean aurrez aukeratutako hizkuntza gisa ingelera
-				// jarri
-				hautatzailea.setSelection(1);
-			}
-		} catch (ClassCastException e) {
-			// Erroreren bat gertatzekotan hautatzailean ingelera jarri
-			// hautatutako hizkuntz gisa
-			hautatzailea.setSelection(1);
-			Log.e("AlbaolApp-HizkuntzHautatzailea(OnCreate)",
-					e.getLocalizedMessage());
-		}
 	}
+	
+
 
 	/**
 	 * Funtzio hau hautatzaileko elementu bat aukeratua izan denean exekutatuko
@@ -173,57 +108,63 @@ public class HizkuntzHautatzailea extends Activity implements
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position,
 			long id) {
-		String hizkuntza = "";
-		switch (position) { // Sakatua izan den indizearen arabera hizkuntza bat
-							// esleitu
-		case 0:
-			hizkuntza = "ca";
-			break;
-		case 1:
-			hizkuntza = "de";
-			break;
-		case 2:
-			hizkuntza = "en";
-			break;
-		case 3:
-			hizkuntza = "es";
-			break;
-		case 4:
-			hizkuntza = "eu";
-			break;
-		case 5:
-			hizkuntza = "fr";
-			break;
-		case 6:
-			hizkuntza = "gl";
-			break;
-		case 7:
-			hizkuntza = "it";
-			break;
-		case 8:
-			hizkuntza = "pt";
-			break;
-		}
-		if (hizkuntza != "") { // hizkuntza aldagaiak balio egokia badu
-			// Hautatutako hizkuntzarekin Locale motako objektu bat sortu
-			Locale lokala = new Locale(hizkuntza);
-			// Sortu berri dugun Locale-a balio lehenetsi gisa jarri
-			Locale.setDefault(lokala);
-			// Ezarpenak kargatu, locale gisa sortu berri dugun locale-a jarri
-			// eta eguneratu
-			Configuration config = new Configuration();
-			config.locale = lokala;
-			getApplicationContext().getResources().updateConfiguration(config,
-					null);
-			// Ezarpenak kargatu
-			SharedPreferences ezarpenak = PreferenceManager
-					.getDefaultSharedPreferences(this);
-			// Ezarpenak aldatzeko editorearen instantzia lortu
-			SharedPreferences.Editor editorea = ezarpenak.edit();
-			// hautatutakoHizkuntza ezarpenari balio berria esleitu
-			editorea.putString("hautatutakoHizkuntza", hizkuntza);
-			// Aldaketa gorde
-			editorea.commit();
+		if (true == lehenAldia) {
+			lehenAldia = false;
+		} else {
+			String hizkuntza = "";
+			switch (position) { // Sakatua izan den indizearen arabera hizkuntza bat
+								// esleitu
+			case 1:
+				hizkuntza = "ca";
+				break;
+			case 2:
+				hizkuntza = "de";
+				break;
+			case 3:
+				hizkuntza = "en";
+				break;
+			case 4:
+				hizkuntza = "es";
+				break;
+			case 5:
+				hizkuntza = "eu";
+				break;
+			case 6:
+				hizkuntza = "fr";
+				break;
+			case 7:
+				hizkuntza = "gl";
+				break;
+			case 8:
+				hizkuntza = "it";
+				break;
+			case 9:
+				hizkuntza = "pt";
+				break;
+			}
+			if (hizkuntza != "") { // hizkuntza aldagaiak balio egokia badu
+				// Hautatutako hizkuntzarekin Locale motako objektu bat sortu
+				Locale lokala = new Locale(hizkuntza);
+				// Sortu berri dugun Locale-a balio lehenetsi gisa jarri
+				Locale.setDefault(lokala);
+				// Ezarpenak kargatu, locale gisa sortu berri dugun locale-a jarri
+				// eta eguneratu
+				Configuration config = new Configuration();
+				config.locale = lokala;
+				getApplicationContext().getResources().updateConfiguration(config,
+						null);
+				// Ezarpenak kargatu
+				SharedPreferences ezarpenak = PreferenceManager
+						.getDefaultSharedPreferences(this);
+				// Ezarpenak aldatzeko editorearen instantzia lortu
+				SharedPreferences.Editor editorea = ezarpenak.edit();
+				// hautatutakoHizkuntza ezarpenari balio berria esleitu
+				editorea.putString("hautatutakoHizkuntza", hizkuntza);
+				// Aldaketa gorde
+				editorea.commit();
+				// Hizkuntza hautatua izan denez, jarduera amaitu, kamera martxan jar dadin
+				finish();
+			}
 		}
 	}
 
