@@ -185,7 +185,7 @@
 			return 3;
 		}
 		$fp = fopen( $outfile . '.mp3', "wb" );
-		if ( false !== $fp ) { //Fitxategia irekitzean errorerik gerta bada
+		if ( false !== $fp ) { //Fitxategia irekitzean errorerik gertatu ez bada
 			fwrite( $fp, $outputMP3 );
 			fclose( $fp );
 		} else {
@@ -196,7 +196,7 @@
 			return 5;
 		}
 		$fp = fopen( $outfile . '.ogg', "wb" );
-		if ( false !== $fp ) { //Fitxategia irekitzean errorerik gerta bada
+		if ( false !== $fp ) { //Fitxategia irekitzean errorerik gertatu ez bada
 			fwrite( $fp, $outputOGG );
 			fclose( $fp );
 		} else {
