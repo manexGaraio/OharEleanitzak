@@ -910,7 +910,7 @@
 					document.getElementById('content').value = testua;
 					if ( true === audioaArrakastaz && '' === erabiltzaileariMezua ) {
 						erabiltzaileariMezua = '" . __( 'Audioa arrakastaz sortu da. ', 'ohar-itzultzailea' ) . __('Eguneratu Bidalketa/Orrialdea (Publish atalaren barruko \\"Update\\" botoia sakatuz) aldaketak ondo gordetzen direla ziurtatzeko.', 'ohar-itzultzailea' ) . "';
-					} else if ( '' !== erabiltzaileariMezua ) {
+					} else if ( true === audioaArrakastaz && '' !== erabiltzaileariMezua ) {
 						erabiltzaileariMezua += '" . __( 'Gainontzeko hizkuntzatan audioa arrakastaz sortu da. ', 'ohar-itzultzailea' ) . __('Eguneratu Bidalketa/Orrialdea (Publish atalaren barruko \\"Update\\" botoia sakatuz) aldaketak ondo gordetzen direla ziurtatzeko.', 'ohar-itzultzailea' ) . "';
 					}
 					// Erabiltzailerari mezua erakutsi
