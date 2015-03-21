@@ -80,9 +80,6 @@
 		wp_enqueue_script( "nire-funtzioak", plugins_url( '/ohar-itzultzailea/jsFuntzioak.php' ), array('jqueryMin','jqueryJsonp') );
 		//Gehigarriarentzat garatutako estilo-orria kargatzeko
 		wp_enqueue_style( "nire-estiloa", plugins_url( '/ohar-itzultzailea/estilo-orria.css' ) );
-		
-		wp_enqueue_script( 'admin_url', get_template_directory_uri() . '/js/myajax.js', array( 'jquery', 'wp-ajax-response' ) );
-		//wp_enqueue_script( "ttsEskuratzailea", plugins_url( '/ohar-itzultzailea/TTSEskuratzailea.php' ) );
 	}
 	
 	//Lerro honen bidez zehazten da oi_funtzioakKargatu funtzioari deitu behar zaiola orrialdea hasieratzen denean(init gertaera)
@@ -370,6 +367,8 @@
 			foreach ( $testuak as $testuLag ) { // Jaso dugun testu ezberdin bakoitzeko (hizkuntz bakoitzeko bat) iterazioa egin
 				$erantsiMP3 = true;
 				$erantsiOGG = true;
+				$aholab = false;
+				
 				// JSON formatuan dago eskaera, dekodifikatu PHP bidez tratatu ahal izateko
 				$testua = json_decode( stripslashes( $testuLag ) , true );
 				// $filename should be the path to a file in the upload directory.
@@ -384,28 +383,33 @@
 					*	Itzultzen dituen kodeak:
 					*		0: ondo joan da
 					*		1: Testua hutsik zegoen
-					*		2: Ezin izan da curl paraleloa ireki
-					*		3: Ezin izan da MP3 fitxategia jaitsi
-					*		4: Ezin izan da MP3 fitxategia idazteko ireki
-					*		5: Ezin izan da OGG fitxategia jaitsi
-					*		6: Ezin izan da OGG fitxategia idazteko ireki
-					*		7: Hizkuntzak ez dauka audio aukerarik
+					*		VoiceRSS:
+					*				2: Ezin izan da curl paraleloa ireki
+					*				3: Ezin izan da MP3 fitxategia jaitsi
+					*				4: Ezin izan da MP3 fitxategia idazteko ireki
+					*				5: Ezin izan da OGG fitxategia jaitsi
+					*				6: Ezin izan da OGG fitxategia idazteko ireki
+					*			Aholab:
+					*				7: Esaldiaren audioa sortzean erroreren bat gertatu bada
+					*				8: Esaldien audioak bateratzean erroreren bat gertatu bada
+					*			9: Hizkuntzak ez dauka audio aukerarik
 					*/
 					switch( $emaitza ) {
 						case 0:
 							// Check the type of file. We'll use this as the 'post_mime_type'.
 							$filetypeMP3 = wp_check_filetype( basename( $filename . '.mp3' ), null );
-							$filetypeOGG = wp_check_filetype( basename( $filename . '.ogg' ), null );
+							if ( false === $aholab ) {
+								$filetypeOGG = wp_check_filetype( basename( $filename . '.ogg' ), null );
+							}
 							
 							// Bidalketari erantsi zaizkion fitxategiak lortu
 							$fitxategiErantsiak = get_attached_media( 'audio', $parent_post_id );
 							foreach( $fitxategiErantsiak as $fitxategiErantsi ) { //Fitxategi erantsi bakoitzarekin konparatu uneko fitxategia
-								//if ( $parent_post_id . "-" . $testua['hizkuntzKodea'] === $fitxategiErantsi->post_title ) { 
 								if ( $wp_upload_dir['url'] . '/audioak/' . basename( $filename . '.mp3' ) === $fitxategiErantsi->guid ) {
 									// Izen bereko fitxategi bat badago lehendik ere erantsita zegoen, ez dugu berriro erantsi behar
 									$erantsiMP3 = false;
 								}
-								if ( $wp_upload_dir['url'] . '/audioak/' . basename( $filename . '.ogg' ) === $fitxategiErantsi->guid ) {
+								if ( false === $aholab && $wp_upload_dir['url'] . '/audioak/' . basename( $filename . '.ogg' ) === $fitxategiErantsi->guid ) {
 									// Izen bereko fitxategi bat badago lehendik ere erantsita zegoen, ez dugu berriro erantsi behar
 									$erantsiOGG = false;
 								}
@@ -430,7 +434,7 @@
 								$erantsiMP3 = false;
 							}
 							
-							if ( true === $erantsiOGG ) { // Uneko fitxategia erantsi behar badugu
+							if ( false === $aholab && true === $erantsiOGG ) { // Uneko fitxategia erantsi behar badugu
 								// Prepare an array of post data for the attachment.
 								$attachment = array(
 									'guid'           => $wp_upload_dir['url'] . '/audioak/' . basename( $filename . '.ogg' ), 
@@ -454,14 +458,10 @@
 								$fitxategia = array(
 									'hizkuntza' => $testua['hizkuntzKodea'],
 								);
-								/*
-								'mp3' => $wp_upload_dir['url'] . "/" . $filename . '.mp3',
-									'ogg' => $wp_upload_dir['url'] . "/" . $filename . '.ogg',
-								*/
 								if ( false === $erantsiMP3 ) {
 									$fitxategia['mp3'] = $wp_upload_dir['url'] . "/audioak/" . $filename . '.mp3';
 								}
-								if ( false === $erantsiOGG ) {
+								if ( false === $aholab && false === $erantsiOGG ) {
 									$fitxategia['ogg'] = $wp_upload_dir['url'] . "/audioak/" . $filename . '.ogg';
 								}
 								$audioFitxategiak[] = $fitxategia; 
@@ -505,6 +505,20 @@
 							$audioFitxategiak[] = $fitxategia;
 							break;
 						case 7:
+							$fitxategia = array(
+								'hizkuntza' => $testua['hizkuntzKodea'],
+								'erroreMezua' => __( 'Ezin izan da testuaren esaldikako audioa sortu.', 'ohar-itzultzailea' ),
+							);
+							$audioFitxategiak[] = $fitxategia;
+							break;
+						case 8:
+							$fitxategia = array(
+								'hizkuntza' => $testua['hizkuntzKodea'],
+								'erroreMezua' => __( 'Esaldikako audioa bateratzean errore bat gertatu da.', 'ohar-itzultzailea' ),
+							);
+							$audioFitxategiak[] = $fitxategia;
+							break;
+						case 9:
 							break;
 					}
 				} else { // VoiceRSS API-ak itzulitako errorea itzuli
@@ -670,56 +684,6 @@
 			//Irudi bat sortu, QRickit zerbitzutik jasotako irudia erabiliz
 			$img = imagecreatefrompng( $helbidea );
 			if ( TRUE == $img ) {//Ondo joan bada
-
-				/*$wp_upload_dir = wp_upload_dir();
-				$fitxategiIzena = "QR-".$id.".png";
-				$path = $wp_upload_dir['path']."/kodeak/" . $fitxategiIzena;
-				//Irudia gorde, emandako helbidean
-				$emaitza = imagepng( $img, $path, 0, NULL );
-				if ( true !== $emaitza ) {//Irudia ondo gorde ez bada
-					$my_post = array(
-					'ID' => $id,
-					'post_status' => 'draft',
-					);
-					//Bidalketa/Orrialdea zirriborro bezala gordeko dugu, bere QR kodea ondo sortu ez delako
-					wp_update_post( $my_post );
-					//QR Kodea ondo sortu ahal izan ez dela adierazten duen aldagaia
-					set_transient( 'oi_ezinKodeaSortu', TRUE, 15);
-				} else {
-
-					$filetype = wp_check_filetype( basename( $fitxategiIzena ), null );
-								
-					// Bidalketari erantsi zaizkion fitxategiak lortu
-					$fitxategiErantsiak = get_attached_media( 'image', $id );
-					foreach( $fitxategiErantsiak as $fitxategiErantsi ) { //Fitxategi erantsi bakoitzarekin konparatu uneko fitxategia
-						//if ( $parent_post_id . "-" . $testua['hizkuntzKodea'] === $fitxategiErantsi->post_title ) { 
-						if ( $wp_upload_dir['url'] . '/kodeak/' . basename( $fitxategiIzena ) === $fitxategiErantsi->guid ) {
-							// Izen bereko fitxategi bat badago lehendik ere erantsita zegoen, ez dugu berriro erantsi behar
-							$erantsi = false;
-						}
-					}
-					
-					if ( true === $erantsi ) { // Uneko fitxategia erantsi behar badugu
-						// Prepare an array of post data for the attachment.
-						$attachment = array(
-							'guid'           => $wp_upload_dir['url'] . '/kodeak/' . basename( $fitxategiIzena ), 
-							'post_mime_type' => $filetype['type'],
-							'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $fitxategiIzena ) ),
-							'post_content'   => '',
-							'post_status'    => 'inherit'
-						);
-
-						// Insert the attachment.
-						$attach_id = wp_insert_attachment( $attachment, $fitxategiIzena, $id );				
-
-						// Generate the metadata for the attachment, and update the database record.
-						$attach_data = wp_generate_attachment_metadata( $attach_id, $fitxategiIzena );
-						wp_update_attachment_metadata( $attach_id, $attach_data );
-					}
-								
-				}*/
-
-
 				$wp_upload_dir = wp_upload_dir();
 				$path = $wp_upload_dir['path']."/kodeak/QR-".$post->ID.".png";
 				//Irudia gorde, emandako helbidean

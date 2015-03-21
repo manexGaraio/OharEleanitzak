@@ -30,8 +30,12 @@
 	*		2 - Audioaren sortzea:
 	*			2.1- oi_convertTextToMP3
 	*			2.2- oi_hizkuntzKodeaLortu
+	*			2.3- oi_aholab
+	*			2.4- oi_fitxategiakBateratu
 	*/
 	
+	// GetID3 liburutegia kargatu
+	include_once OI_PLUGIN_KOKAPENA . 'liburutegiak/getid3/getid3.php';
 	
 	
 	//
@@ -88,119 +92,128 @@
 	
 	
 	/*
-	*	2.1: Funtzio honek VoiceRss zerbitzuari deia egiten dio, testuaren audioa sortzeko. Audioa OGG eta MP3 formatuetan sortuko da, nabigatzaile guztietan entzun ahalko dela ziurtatzeko
+	*	2.1: Funtzio honek VoiceRss eta Aholab zerbitzuei deia egiten die, testuaren audioa sortzeko. Aholab eu eta gl hizkuntzetarako erabiltzen da soilik
 	*		Itzultzen dituen kodeak:
 	*			0: ondo joan da
 	*			1: Testua hutsik zegoen
-	*			2: Ezin izan da curl paraleloa ireki
-	*			3: Ezin izan da MP3 fitxategia jaitsi
-	*			4: Ezin izan da MP3 fitxategia idazteko ireki
-	*			5: Ezin izan da OGG fitxategia jaitsi
-	*			6: Ezin izan da OGG fitxategia idazteko ireki
-	*			7: Hizkuntzak ez dauka audio aukerarik
+	*			VoiceRSS:
+	*				2: Ezin izan da curl paraleloa ireki
+	*				3: Ezin izan da MP3 fitxategia jaitsi
+	*				4: Ezin izan da MP3 fitxategia idazteko ireki
+	*				5: Ezin izan da OGG fitxategia jaitsi
+	*				6: Ezin izan da OGG fitxategia idazteko ireki
+	*			Aholab:
+	*				7: Esaldiaren audioa sortzean erroreren bat gertatu bada
+	*				8: Esaldien audioak bateratzean erroreren bat gertatu bada
+	*			9: Hizkuntzak ez dauka audio aukerarik
 	*/
 	function oi_convertTextToAudio( $str, $lang, $outfile ) {
 		if ( '' === $str ) { // Jasotako testua hutsik badago, 1 kodea itzuli
 			return 1;
 		}
 		
-		$hizkuntza = oi_hizkuntzKodeaLortu( $lang );
-		if ( '' === $hizkuntza ) {
-			return 7;
-		}
-		
-		$url = 'https://api.voicerss.org';
-		
-		// cURL hasieratu
-		$ch1 = curl_init(); 
-		$ch2 = curl_init(); 
-		
-		// cURL bidez egindako POST deien parametroak ezarri
-		curl_setopt( $ch1, CURLOPT_URL, $url );
- 		curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
-		curl_setopt( $ch1, CURLOPT_POST, true );
-		curl_setopt( $ch1, CURLOPT_POSTFIELDS, array( 'key' => VR_GAKOA,
-													'hl' => $hizkuntza,
-													'f' => '16khz_16bit_stereo',
-													'r' => -2,
-													'c' => 'MP3',
-													'src' => $str,
-											)
-		);
-		
-		curl_setopt( $ch2, CURLOPT_URL, $url );
- 		curl_setopt( $ch2, CURLOPT_RETURNTRANSFER, true );
-		curl_setopt( $ch2, CURLOPT_POST, true );
-		curl_setopt( $ch2, CURLOPT_POSTFIELDS, array( 'key' => VR_GAKOA,
-													'hl' => $hizkuntza,
-													'f' => '16khz_16bit_stereo',
-													'r' => -2,
-													'c' => 'OGG',
-													'src' => $str,
-											)
-		);
-		
-		// cURL dei bat baino gehiago egiteko
-		$mh = curl_multi_init();
-		if ( false !== $mh ) {
-			curl_multi_add_handle( $mh, $ch1 );
-			curl_multi_add_handle( $mh, $ch2 );
+		if ( "eu" === $lang || "gl" === $lang ) { // Hizkuntza euskara edota galiziera bada
+			// Aholab zerbitzuari deia egin
+			return oi_aholab($str, $lang, $outfile);
+		} else {
+			$hizkuntza = oi_hizkuntzKodeaLortu( $lang );
+			if ( '' === $hizkuntza ) {
+				return 9;
+			}
+			// VoiceRss zerbitzuaren APIa erabiltzeko behar den gakoa
+			$url = 'https://api.voicerss.org';
 			
-			$active = null;
-			//execute the handles
-			do {
-				$mrc = curl_multi_exec($mh, $active);
-			} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+			// cURL hasieratu
+			$ch1 = curl_init(); 
+			$ch2 = curl_init(); 
+			
+			// cURL bidez egindako POST deien parametroak ezarri
+			curl_setopt( $ch1, CURLOPT_URL, $url );
+			curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
+			curl_setopt( $ch1, CURLOPT_POST, true );
+			curl_setopt( $ch1, CURLOPT_POSTFIELDS, array( 'key' => VR_GAKOA,
+														'hl' => $hizkuntza,
+														'f' => '16khz_16bit_stereo',
+														'r' => -2,
+														'c' => 'MP3',
+														'src' => $str,
+												)
+			);
+			
+			curl_setopt( $ch2, CURLOPT_URL, $url );
+			curl_setopt( $ch2, CURLOPT_RETURNTRANSFER, true );
+			curl_setopt( $ch2, CURLOPT_POST, true );
+			curl_setopt( $ch2, CURLOPT_POSTFIELDS, array( 'key' => VR_GAKOA,
+														'hl' => $hizkuntza,
+														'f' => '16khz_16bit_stereo',
+														'r' => -2,
+														'c' => 'OGG',
+														'src' => $str,
+												)
+			);
+			
+			// cURL dei bat baino gehiago egiteko
+			$mh = curl_multi_init();
+			if ( false !== $mh ) {
+				curl_multi_add_handle( $mh, $ch1 );
+				curl_multi_add_handle( $mh, $ch2 );
+				
+				$active = null;
+				//execute the handles
+				do {
+					$mrc = curl_multi_exec($mh, $active);
+				} while ($mrc == CURLM_CALL_MULTI_PERFORM);
 
-			while ($active && $mrc == CURLM_OK) {
-				if (curl_multi_select($mh) != -1) {
-					do {
-						$mrc = curl_multi_exec($mh, $active);
-					} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+				while ($active && $mrc == CURLM_OK) {
+					if (curl_multi_select($mh) != -1) {
+						do {
+							$mrc = curl_multi_exec($mh, $active);
+						} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+					}
 				}
+				// Jasotako erantzunak aldagaietara pasa
+				$outputMP3 = curl_multi_getcontent( $ch1 );
+				$outputOGG = curl_multi_getcontent( $ch2 );
+				
+				//close the handles
+				curl_multi_remove_handle( $mh, $ch1 );
+				curl_multi_remove_handle( $mh, $ch2 );
+				curl_multi_close( $mh );
+				// Deiek errorea itzuli badute, errore mezua itzuli
+				if ( false !== strpos( $outputMP3, 'ERROR:' ) && false !== strpos( $outputOGG, 'ERROR:' ) ) {
+					return __( 'MP3 eta OGG fitxategiak sortzean.', 'ohar-itzultzailea' ) . ' MP3: ' . $outputMP3 . '. OGG: ' . $outputOGG;
+				} else if ( false !== strpos( $outputMP3, 'ERROR:' ) ) {
+					return __( 'MP3 fitxategia sortzean.', 'ohar-itzultzailea' ) . ' MP3: ' . $outputMP3;
+				} else if ( false !== strpos( $outputOGG, 'ERROR:' ) ) {
+					return __( 'OGG fitxategia sortzean.', 'ohar-itzultzailea' ) . ' OGG: ' . $outputOGG;
+				}
+			} else { // cURL deiak itxi
+				curl_close( $ch1 );
+				curl_close( $ch2 );
+				return 2;
 			}
-			// Jasotako erantzunak aldagaietara pasa
-			$outputMP3 = curl_multi_getcontent( $ch1 );
-			$outputOGG = curl_multi_getcontent( $ch2 );
-			
-			//close the handles
-			curl_multi_remove_handle( $mh, $ch1 );
-			curl_multi_remove_handle( $mh, $ch2 );
-			curl_multi_close( $mh );
-			// Deiek errorea itzuli badute, errore mezua itzuli
-			if ( false !== strpos( $outputMP3, 'ERROR:' ) && false !== strpos( $outputOGG, 'ERROR:' ) ) {
-				return __( 'MP3 eta OGG fitxategiak sortzean.', 'ohar-itzultzailea' ) . ' MP3: ' . $outputMP3 . '. OGG: ' . $outputOGG;
-			} else if ( false !== strpos( $outputMP3, 'ERROR:' ) ) {
-				return __( 'MP3 fitxategia sortzean.', 'ohar-itzultzailea' ) . ' MP3: ' . $outputMP3;
-			} else if ( false !== strpos( $outputOGG, 'ERROR:' ) ) {
-				return __( 'OGG fitxategia sortzean.', 'ohar-itzultzailea' ) . ' OGG: ' . $outputOGG;
-			}
-		} else { // cURL deiak itxi
-			curl_close( $ch1 );
-			curl_close( $ch2 );
-			return 2;
-		}
 
-		if ( $outputMP3 == false ) { // Deiak ezer itzuli ez badu
-			return 3;
-		}
-		$fp = fopen( $outfile . '.mp3', "wb" );
-		if ( false !== $fp ) { //Fitxategia irekitzean errorerik gertatu ez bada
-			fwrite( $fp, $outputMP3 );
-			fclose( $fp );
-		} else {
-			return 4;
-		}
-		
-		if ( $outputOGG == false ) { // Deiak ezer itzuli ez badu
-			return 5;
-		}
-		$fp = fopen( $outfile . '.ogg', "wb" );
-		if ( false !== $fp ) { //Fitxategia irekitzean errorerik gertatu ez bada
-			fwrite( $fp, $outputOGG );
-			fclose( $fp );
-		} else {
-			return 6;
+			if ( $outputMP3 == false ) { // Deiak ezer itzuli ez badu
+				return 3;
+			}
+			$fp = fopen( $outfile . '.mp3', "wb" );
+			if ( false !== $fp ) { //Fitxategia irekitzean errorerik gertatu ez  bada
+				fwrite( $fp, $outputMP3 );
+				fclose( $fp );
+			} else {
+				return 4;
+			}
+			
+			if ( $outputOGG == false ) { // Deiak ezer itzuli ez badu
+				return 5;
+			}
+			$fp = fopen( $outfile . '.ogg', "wb" );
+			if ( false !== $fp ) { //Fitxategia irekitzean errorerik gertatu ez bada
+				fwrite( $fp, $outputOGG );
+				fclose( $fp );
+			} else {
+				return 6;
+			}
 		}
 		return 0;
 	}
@@ -247,4 +260,110 @@
 			default:	// Hizkuntza erabilgarri ez badago karaktere-kate hutsa itzuli
 				return '';
 		}
+	}
+
+	/*
+	*	2.3: Funtzio honek Aholab zerbitzuari deia egiten dio, euskara eta galizierako audioa sortzeko.
+	*		Audioa esaldika sortzen da, mp3 formatuan
+	*/
+	function oi_aholab($str, $hizk, $outfile) {
+		// Entonazioan eraginik ez duten testua esaldika zatitzeko eragozpena suposatzen duten karaktereak definitu
+		$ikurBaztergarriak = array( "...", "'", '"' );
+		// Ikur baztergarriak  kendu
+		$str = str_replace( $ikurBaztergarriak, "", $str );
+		// Testua banatu, esaldika
+		$esaldiak = explode( ".", $str );
+		
+		$urlErroa = 'http://tts.elhuyar.org/ahots_sintesia/ahots_sintesia_entzun';
+		// Euskarazko testuen kasuan, TTS zerbitzuak arazoak ematen ditu, puntuazio ikurrekin esaldiak guztiz ahoskatzen ez ditu eta
+		$puntuazioIkurrak = array( ".", ";", ":", "?", "!" );
+		$fitxategiakMP3 = array();
+		
+		foreach ( $esaldiak as $esaldia ) {
+			if ( "eu" === $hizk ) {
+				$esaldia = str_replace( $puntuazioIkurrak, ",", $esaldia );
+			}
+			$url = "?testua=" . urlencode( $esaldia ) . "&hizkuntza=$hizk&speed=85&response=mp3";
+			// Uneko esaldiaren fitxategi izena definitu
+			$fitxIzena = md5($esaldia);
+			$urlOsoa = $urlErroa . $url;
+			
+			$mp3Emaitza = file_put_contents( $fitxIzena . '.mp3', file_get_contents( $urlOsoa ) );
+				
+			if ( false === $mp3Emaitza ) { // Deiak ezer itzuli ez badu
+				return 7;
+			} else {
+				$fitxategiakMP3[] = $fitxIzena . '.mp3';
+			}
+		}
+	 
+		if( count( $fitxategiakMP3 ) === count( $esaldiak ) ) { // Esaldi bakoitzeko audio fitxategi bat badugu
+			if ( false === oi_fitxategiakBateratu( $outfile . ".mp3", $fitxategiakMP3 ) ) {
+				return 8;
+			}
+		} else { // Esaldi adina fitxategi ez badago, arazo bat egon da
+			foreach ($fitxategiakMP3 as $fitxategia) { // Esaldikako fitxategiak ezabatu
+				unlink($fitxategia);
+			}
+			return 7;
+		}
+		
+		foreach ($fitxategiakMP3 as $fitxategia) { // Esaldikako fitxategiak ezabatu
+			unlink($fitxategia);
+		}
+		return 0;
+	}
+	
+	/*
+	*	2.3: Funtzio honek esaldikako audioak audio fitxategi bakar batean gordetzen ditu
+	*/
+	function oi_fitxategiakBateratu($fitxategiBateratua, $jatorriFitxategiak) {
+		foreach ($jatorriFitxategiak as $fitxategia) {
+			if (!is_readable($fitxategia)) {
+				return false;
+			}
+		}
+	 
+		ob_start();
+		if ($fp_output = fopen($fitxategiBateratua, 'wb')) {
+			ob_end_clean();
+			// Initialize getID3 engine
+			$getID3 = new getID3;
+			foreach ($jatorriFitxategiak as $fitxategia) {
+				$CurrentFileInfo = $getID3->analyze($fitxategia);
+				if ( $CurrentFileInfo['fileformat'] === 'mp3' ) {
+					ob_start();
+					if ( $fp_source = fopen($fitxategia, 'rb') ) {
+						ob_end_clean();
+						$CurrentOutputPosition = ftell($fp_output);
+	 
+						// copy audio data from first file
+						fseek($fp_source, $CurrentFileInfo['avdataoffset'], SEEK_SET);
+						while (!feof($fp_source) && (ftell($fp_source) < $CurrentFileInfo['avdataend'])) {
+							fwrite($fp_output, fread($fp_source, 32768));
+						}
+						fclose($fp_source);
+	 
+						// trim post-audio data (if any) copied from first file that we don't need or want
+						$EndOfFileOffset = $CurrentOutputPosition + ($CurrentFileInfo['avdataend'] - $CurrentFileInfo['avdataoffset']);
+						fseek($fp_output, $EndOfFileOffset, SEEK_SET);
+						ftruncate($fp_output, $EndOfFileOffset);
+					} else {
+						$errormessage = ob_get_contents();
+						ob_end_clean();
+						fclose($fp_output);
+						return false;
+					}
+				} else {
+					fclose($fp_output);
+					return false;
+				}
+			}
+		} else {
+			$errormessage = ob_get_contents();
+			ob_end_clean();
+			return false;
+		}
+		fclose($fp_output);
+		return true;
 	}
